@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://vpnranking.github.io/news/article-82211.htm" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ZooKeeper之Java客户端API使用—读取数据。</title>
+        <meta name="description" content="&nbsp; 读取数据，包括子节点列表的获取和节点数据的获取。ZooKeeper分别提供了不同的API来获取数据。  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp" />
+        <link rel="icon" href="/assets/website/img/clashmihomo/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="推荐免费VPN排名 订阅机场节点中文网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://vpnranking.github.io/news/article-82211.htm" />
+    <meta property="og:site_name" content="推荐免费VPN排名 订阅机场节点中文网" />
+    <meta property="og:title" content="ZooKeeper之Java客户端API使用—读取数据。" />
+    <meta property="og:image" content="https://vpnranking.github.io/uploads/20240920-1/07b6e58ce757ade5ffc90a2254887878.webp" />
+        <meta property="og:release_date" content="2025-03-27T08:12:24" />
+    <meta property="og:updated_time" content="2025-03-27T08:12:24" />
+        <meta property="og:description" content="&nbsp; 读取数据，包括子节点列表的获取和节点数据的获取。ZooKeeper分别提供了不同的API来获取数据。  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp" />
+        
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/animate/animate.min.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/fontawesome/css/all.min.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/jarallax/jarallax.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/jquery-magnific-popup/jquery.magnific-popup.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/nouislider/nouislider.min.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/nouislider/nouislider.pips.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/odometer/odometer.min.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/swiper/swiper.min.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/kitecx-icons/style.css">
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/tiny-slider/tiny-slider.min.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/reey-font/stylesheet.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/owl-carousel/owl.carousel.min.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/owl-carousel/owl.theme.default.min.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/twentytwenty/twentytwenty.css" />
+    <!-- template styles -->
+    <link rel="stylesheet" href="/assets/website/css/clashmihomo/kitecx.css" />
+    <link rel="stylesheet" href="/assets/website/css/clashmihomo/kitecx-responsive.css" />
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="ZooKeeper之Java客户端API使用—读取数据。">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NTDMVXZVYN"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-NTDMVXZVYN');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <div class="preloader">
+        <img class="preloader__image" width="60" src="assets/images/loader.png" alt="" />
+    </div>
+    <!-- /.preloader -->
+    <div class="page-wrapper">
+                <header class="main-header clearfix">
+            <div class="container">
+                <div class="main-menu-wrapper">
+                    <div class="main-header__logo">
+                                                <a href="/">
+                            <span>推荐免费VPN排名</span>
+                        </a>
+                                            </div>
+                    <div class="main-menu-wrapper__bottom">
+                        <nav class="main-menu">
+                            <div class="main-menu__inner">
+                                <a href="#" class="mobile-nav__toggler"><i class="fa fa-bars"></i></a>
+                                <ul class="main-menu__list">
+                                                                        <li><a href="/">首页</a></li>
+                                                                        <li><a href="/free-nodes/">免费节点</a></li>
+                                                                        <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                        <li><a href="/news/">新闻资讯</a></li>
+                                                                        <li><a href="/client.htm">客户端</a></li>
+                                                                    </ul>
+                                
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="stricky-header stricked-menu main-menu">
+            <div class="sticky-header__content"></div><!-- /.sticky-header__content -->
+        </div><!-- /.stricky-header -->
+        <!--Page Header Start-->
+        <section class="page-header" style="background-image: url(/assets/website/img/clashmihomo/backgrounds/page-header-bg.jpg);">
+            <div class="page-header-border"></div>
+            <div class="page-header-border page-header-border-two"></div>
+            <div class="page-header-border page-header-border-three"></div>
+            <div class="page-header-border page-header-border-four"></div>
+            <div class="page-header-border page-header-border-five"></div>
+            <div class="page-header-border page-header-border-six"></div>
+            <div class="container">
+                <div class="page-header__inner">
+                    <h1>ZooKeeper之Java客户端API使用—读取数据。</h1>
+                    <ul class="thm-breadcrumb list-unstyled">
+                        <li><a href="/">首页</a></li>
+                        <li><span>/</span></li>
+                        <li><a href="/news/">新闻资讯</a></li>
+                        <li><span>/</span></li>
+                        <li>正文</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <!--Page Header End-->
+        <!--Welcome One Start-->
+        <section class="welcome-one py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                                        <input type="hidden" id="share-website-info" data-name="Clash Meta免费节点订阅站" data-url="https://clash-meta.github.io">
+                  				  				  				<div id="content_views" class="htmledit_views"> <p><strong>&nbsp; 读取数据，包括子节点列表的获取和节点数据的获取。</strong>ZooKeeper分别提供了不同的API来获取数据。</p> </h1> <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 客户端可以通过ZooKeeper的API来获取一个节点的所有子节点，有如下8个接口可供使用：</p> <ul> <li><strong>List&lt;String&gt; getChildren(final String path , Watcher watcher)</strong></li> <li><strong>List&lt;String&gt; getChildren(String path , boolean watch)</strong></li> <li><strong>void getChildren(final String path, Watcher watcher, ChildrenCallback cb, Object ctx)</strong></li> <li><strong>void getChildren(String path, boolean watch, ChildrenCallback cb, Object ctx)<br /></strong></li> <li><strong>List&lt;String&gt; getChildren(final String path , Watcher watcher, Stat stat)</strong></li> <li><strong>List&lt;String&gt; getChildren(String path , boolean watch, Stat stat)</strong></li> <li><strong>void getChildren(final String path, Watcher watcher, Children2Callback cb, Object ctx)</strong></li> <li><strong>void getChildren(String path, boolean watch, Children2Callback cb, Object ctx)</strong></li> </ul> <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 这里列出的8个API包含了同步和异步的接口，API方法的参数说明如下表所示。</p> <blockquote> <table border="1" width="851" height="208" cellspacing="1" cellpadding="1"> <tbody> <tr> <th>参数名</th> <th>说明</th> </tr> </tbody> <tbody> <tr> <td>path</td> <td>指定数据节点的节点路径，即API调用的目的是获取该节点的子节点列表</td> </tr> <tr> <td>watcher</td> <td>注册的Watcher。一旦在本次子节点获取之后，子节点列表发生变更的话，那么就会向客户端发送通知。该参数允许传入null</td> </tr> <tr> <td>watch</td> <td>表明是否需要注册一个Watcher。这里就要使用默认Watcher了。如果这个参数是true，那么ZooKeeper客户端会自动使用上文中提到的那个默认Watcher；如果是false，表明不需要注册Watcher</td> </tr> <tr> <td>cb</td> <td>注册一个异步回调函数</td> </tr> <tr> <td>ctx</td> <td>用于传递上下文信息的对象</td> </tr> <tr> <td>stat</td> <td>指定数据节点的节点状态信息。用法是在接口中传入一个旧的stat变量，该stat变量会在方法执行执行过程中，被来自服务器响应的新stat对象替换</td> </tr> </tbody> </table> </blockquote> <h2>Watcher<br /></h2> <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 注册Watcher，如果ZooKeeper客户端在获取到指定节点的子节点列表后，还需要订阅这个子节点列表的变化通知，那么就可以通过注册一个Watcher来实现。当有子节点被添加或是删除时，服务器就会向客户端发送一个NodeChildren Change(EventType.NodeChildrenChanged)类型的事件通知。需要注意的是，在服务端发送给客户端的事件通知中，是不包含最新的节点列表的，客户端必须主动重新进行获取。通常客户端在收到这个事件通知后，就可以再次获取最新的子节点列表了。</p> <h2>stat</h2> <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 描述节点状态信息的对象：stat。stat对象中记录了一个节点的基本属性信息，例如列电创建时事务ID（cZxid）、最后一次修改的事务ID（mZxid）和节点数据内容的长度（dataLength）等。有时候，我们不仅需要获取节点最新的子节点列表，还要获取这个节点最新的节点状态信息。对于这种情况，我们可以将一个旧的stat变量传入API接口，该stat变量会在方法执行过程中，被来自服务端响应的新stat对象替换。</p> <h2>使用同步API获取子节点列表</h2> <p>// ZooKeeper API 获取子节点列表，使用同步（sync）接口</p> <p>public class ZooKeeper_GetChildren_API_Sync_Usage implements Watcher {<!-- --></p> <blockquote> <p>private static CountDownLatch connectedSemaphore = new CountDownLatch(1);</p> <p>pirvate static ZooKeeper zk = null;</p> <p>public static void main(String[] args) throws Exception {<!-- --></p> <blockquote> <p>String path = "/zk-book";</p> <p>zk = new ZooKeeper("domain1.book.zookeeper:2181", 5000, new ZooKeeper_GetChildren_API_Sync_Usage());</p> <p>connectedSemaphore.await();</p> <p>zk.create(path, "".getBytes(), Ids.OPEN_ACL_UNSAFE, CreateMode.PERSISTENT);</p> <p>zk.create(path+"/c1", "".getBytes(), Ids.OPEN_ACL_UNSAFE, CreateMode.EPHEMERAL);</p> <p>List&lt;String&gt; childrenList = zk.getChildren(path , true);</p> <p>System.out.println(childrenList);</p> <p>zk.create(path+"/c2", "".getBytes(), Ids.OPEN_ACL_UNSAFE, CreateMode.EPHEMERAL);</p> <p>Thread.sleep(Integer.MAX_VALUE);</p> </blockquote> <p>}</p> <p>public void process(WatchedEvent event) {<!-- --></p> <blockquote> <p>if (KeeperState.SyncConnected == event.getState()) {<!-- --></p> <blockquote> <p>if (EventType.None == event.getType() &amp;&amp; null == event.getPath) {<!-- --></p> <blockquote> <p>connectedSemaphore.countDown();</p> </blockquote> <p>} else if (event.getType() == EventType.NodeChildrenChanged) {<!-- --></p> <blockquote> <p>try {<!-- --></p> <blockquote> <p>System.out.println("ReGet Child:" + zk.getChildren(event.getPath(), true));</p> </blockquote> <p>} catch (Exception e) {}</p> </blockquote> <p>}</p> </blockquote> <p>}</p> </blockquote> <p>}</p> </blockquote> <p>}</p> <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 运行程序，输出结果如下：</p> <blockquote> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220823/9b44669746ff34b2809bd31d8b7afa96.jpg" alt="ZooKeeper之Java客户端API使用—读取数据。"></p> </blockquote> <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 在上面这个程序中，我们首先创建了一个父节点/zk-book，以及一个子节点/zk-book/c1。然后调用getChildren的同步接口来获取/zk-book节点下的所有子节点，同时在接口调用的时候注册了一个Watcher。之后，我们继续向/zk-book节点创建子节点/zk-book/c2。由于之前我们对/zk-book节点注册了一个Watcher，因此，一旦此时有子节点被创建，ZooKeeper服务端就会客户端发出一个“子节点变更”的事件通知，于是，客户但在收到这个事件通知之后就可以再次调用getChildren方法来获取新的子节点列表。</p> <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 另外，从输出结果中我们还可以发现，调用getChildren获取到节点列表，都是数据节点的相对节点路径，例如上面输出结果中的c1和c2，事实上，完整的ZNode路径应该是/zk-book/c1和zk-book/c2。</p> <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 关于Watcher，这里简单提一点，ZooKeeper服务端在向客户端发送Watcher “NodeChildrenChanged”事件通知的时候，仅仅只会发出一个通知，而不会把节点的变化情况发送给客户端，需要客户端自己重新获取。另外，由于Watcher通知是一次性的，即一旦触发一次通知后，该Watcher就失效了，因此客户端需要反复注册Watcher。</p> <h2>使用异步API获取子节点列表</h2> <p>//&nbsp;ZooKeeper API 获取子节点列表，使用异步（async）接口</p> <p>public class ZooKeeper_GetChildren_API_ASync_Usage implements Watcher {<!-- --></p> <blockquote> <p>private static CountDownLatch connectedSemaphore = new CountDownLatch(1);</p> <p>private static ZooKeeper zk = null;</p> <p>public static void main(String[] args) throws Exception {<!-- --></p> <blockquote> <p>String path = "/zk-book";</p> <p>zk = new ZooKeeper("domain1.book.zookeeper:2181", 5000, new ZooKeeper_GetChildren_API_ASync_Usage());</p> <p>connectedSemaphore.await();</p> <p>zk.create(path , "".getBytes() , Ids.OPEN_ACL_UNSAFE, CreateMode.PERSISTENT);</p> <p>zk.create(path+"/c1", "".getBytes(), Ids.OPEN_ACL_UNSAFE, CreateMode.EPHEMERAL);</p> <p>zk.getChildren(path, true, new IChildren2Callback(), null);</p> <p>zk.create(path + "/c2", "".getBytes(), Ids.OPEN_ACL_UNSAFE, CreateMode.EPHEMERAL);</p> <p>Thread.sleep(Integer.MAX_VALUE);</p> </blockquote> <p>}</p> <p>public void process(WatchedEvent event) {<!-- --></p> <blockquote> <p>if(KeeperState.SyncConnected == event.getState()) {<!-- --></p> <blockquote> <p>if(KeeperState.SyncConnected == event.getState()) {<!-- --></p> <blockquote> <p>if(EventType.None == event.getType() &amp;&amp; null == event.getPath()) {<!-- --></p> <blockquote> <p>connectedSemaphore.countDown();</p> </blockquote> <p>} else if (event.getType == EventType.NodeChildrenChanged) {<!-- --></p> <blockquote> <p>try {<!-- --></p> <blockquote> <p>System.out.println("ReGet Child:" + zk.getChildren(event.getPath(), true));</p> </blockquote> <p>} catch (Exception e) {}</p> </blockquote> <p>}</p> </blockquote> <p>}</p> </blockquote> <p>}</p> </blockquote> <p>}</p> </blockquote> <p>}</p> <p>class IChildren2Callback implements AsyncCallback.Children2Callback {<!-- --></p> <blockquote> <p>public void processResult(int rc, String path, Object ctx, List&lt;String&gt; children, Stat stat) {<!-- --></p> <blockquote> <p>System.out.println("Get Children znode result:[response code:" + rc + ", param path:" + path + ", ctx: " + ", children list: " + ", stat:" + stat);</p> </blockquote> <p>}</p> </blockquote> <p>}</p> <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 运行程序，输出结果如下：</p> <blockquote> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220823/1a6274c493a72f679c6c532558ea802e.jpg" alt="ZooKeeper之Java客户端API使用—读取数据。"></p> </blockquote> <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 在上面这个程序中，我们将子节点列表的获取逻辑进行了异步化。异步接口通常会应用在这样的使用场景中：应用启动的时候，会获取一些配置信息，例如“机器列表”，这些配置通常比较大，并且不希望配置的获取影响应用的主流程。</p> </h1> <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 客户端可以通过ZooKeeper的API来获取一个节点的数据内容，有如下4个接口：</p> <ul> <li><strong>byte[] getData(final String path, Watcher watcher, Stat stat)</strong></li> <li><strong>byte[] getData(String path, boolean watch, Stat stat)</strong></li> <li><strong>void getData(final String path, Watcher watcher, DataCallback cb, Object ctx)</strong></li> <li><strong>void getData(String path, boolean watch, DataCallback cb, Object ctx)</strong></li> </ul> <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 这里列出的4个API包含了同步和异步的接口，API方法的参数说明如下表所示。</p> <blockquote> <table border="1" width="842" height="191" cellspacing="1" cellpadding="1"> <tbody> <tr> <th>参数名</th> <th>说明</th> </tr> </tbody> <tbody> <tr> <td>path</td> <td>指定数据节点的节点路径，即API调用的目的是获取该节点的数据内容</td> </tr> <tr> <td>watcher</td> <td>注册的Watcher。一旦之后节点内容有变更，就会向客户端发送通知。该参数允许传入null</td> </tr> <tr> <td>stat</td> <td>指定数据节点的节点状态信息。用法是在接口中传入一个旧的stat变量，该stat变量会在方法执行过程中，被来自服务端响应的新stat对象替换。</td> </tr> <tr> <td>watch</td> <td>表明是否需要注册一个Watcher。这里使用到默认Watcher。如果这个参数是true，那么ZooKeeper客户端会自动使用上文中提到的那个默认Watcher：如果是false，表明不需要注册Watcher</td> </tr> <tr> <td>cb</td> <td>注册一个异步回调函数</td> </tr> <tr> <td>ctx</td> <td>用于传递上下文信息的对象</td> </tr> </tbody> </table> </blockquote> <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; getData接口和上文中的getChildren接口的用法基本相同，这里主要看一看注册的Watcher有什么不同之处。客户端在获取一个节点的数据内容的时候，是可以进行Watcher注册的，这样一来，一旦该节点的状态发生变更，那么ZooKeeper服务端就会向客户端发送一个NodeDataChanged(EventType.NodeDataChanged) 的事件通知。</p> <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 另外，API返回结果的类型是byte[]，目前ZooKeeper只支持这种类型的数据存储，所以在获取数据的时候也是返回此类型。</p> <h2>使用同步API获取节点数据内容</h2> <p>// ZooKeeper API 获取节点数据内容，使用同步（sync）接口</p> <p>public class ZooKeeper_GetData_API_Sync_Usage implements Watcher {<!-- --></p> <blockquote> <p>private static CountDownLatch connectedSemaphore = new CountDownLatch(1);</p> <p>pirvate static ZooKeeper zk = null;</p> <p>public static void main(String[] args) throws Exception {<!-- --></p> <blockquote> <p>String path = "/zk-book";</p> <p>zk = new ZooKeeper("domain1.book.zookeeper:2181", 5000, new ZooKeeper_GetData_API_Sync_Usage());</p> <p>connectedSemaphore.await();</p> <p>zk.create(path, "123".getBytes(), Ids.OPEN_ACL_UNSAFE, CreateMode.EPHEMERAL);</p> <p> System.out.println(new String(zk.getData(path, true, stat)));<br /> System.out.println(stat.getCzxid() + "," + stat.getMzxid() + "," + stat.getVersion());<br /> zk.setData(path, "123".Bytes(), -1);</p> <p>Thread.sleep(Integer.MAX_VALUE);</p> </blockquote> <p>}</p> <p>public void process(WatchedEvent event) {<!-- --></p> <blockquote> <p>if (KeeperState.SyncConnected == event.getState()) {<!-- --></p> <blockquote> <p>if (EventType.None == event.getType() &amp;&amp; null == event.getPath) {<!-- --></p> <blockquote> <p>connectedSemaphore.countDown();</p> </blockquote> <p>} else if (event.getType() == EventType.NodeChildrenChanged) {<!-- --></p> <blockquote> <p>try {<!-- --></p> <blockquote> <p>System.out.println(new String(zk.getData(event.getPath(), true, stat)));</p> <blockquote> <p>System.out.println(stat.getCzxid() + "," + stat.getMzxid() + "," + stat.getVersion());</p> </blockquote> </blockquote> <p>} catch (Exception e) {}</p> </blockquote> <p>}</p> </blockquote> <p>}</p> </blockquote> <p>}</p> </blockquote> <p>}</p> <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 运行程序，输出结果如下：</p> <blockquote> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220823/ef83b2c1b25cece8f6ed14a992adf2b3.jpg" alt="ZooKeeper之Java客户端API使用—读取数据。"></p> </blockquote> <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 在上面这个程序中，我们首先创建了一个节点/zk-book，并初始化其数据内容为“123”.然后调用getData的同步接口来获取/zk-book节点的数据内容，调用的同时注册了一个Watcher。之后，我们同样以“123”去更新将该节点的数据内容，此时，由于我们之前在该节点上注册了一个Watcher，因此，一旦该节点的数据发生变化，ZooKeeper服务端就会向客户端发出一个“数据变更”的事件通知，于是，客户端可以收到这个事件通知后，再次调用getData接口来获取新的数据内容。</p> <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 另外，在调用getData接口的同时，我们传入了一个stat变量，在ZooKeeper客户端的内部实现中，会从服务端的响应中获取到数据节点的最新节点状态信息，来替换这个客户端的旧状态。</p> <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 我们重点再来看下运行上面这个程序的输出结果中，前后两次调用getData接口的返回值。第一次的输出结果如下：</p> <blockquote> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220823/33c75a62fcd79dc3d64d91da2cc4c5a5.jpg" alt="ZooKeeper之Java客户端API使用—读取数据。"></p> </blockquote> <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 第二次的输出结果如下：</p> <blockquote> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220823/07969e87024083b8153a9807ccb63d19.jpg" alt="ZooKeeper之Java客户端API使用—读取数据。"></p> </blockquote> <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 第一次是客户端主动调用getData接口来获取数据；第二次则是节点数据变更后，服务端发送Watcher事件通知给客户端后，客户端再次调用getData接口来获取数据。两次调用的输出结果中，节点数据内容的值并没有变化。既然节点的数据内容并没有变化，那么ZooKeeper服务端为什么会向客户端发送Watcher事件通知呢。这里，我们必须明确一个概念：节点的数据内容或是节点的数据版本变化，都被看作是ZooKeeper节点的变化。明白这个概念后，再回过头看上面的结果输出，可以看出，该节点在Zxid为“253404961568”时被创建，在Zxid为“253404961576”时被更新，于是节点的数据版本从“0”变化到“1”.所以，这里我们要明确的一点是，蜀军欸容或是数据版本变化，都会触发服务端的NodeDataChanged通知。</p> <h2>使用异步API获取节点数据内容</h2> <p>//&nbsp;ZooKeeper API 获取节点数据内容，使用异步（async）接口</p> <p>public class GetData_API_ASync_Usage implements Watcher {<!-- --></p> <blockquote> <p>private static CountDownLatch connectedSemaphore = new CountDownLatch(1);</p> <p>private static ZooKeeper zk = null;</p> <p>public static void main(String[] args) throws Exception {<!-- --></p> <blockquote> <p>String path = "/zk-book";</p> <p>zk = new ZooKeeper("domain1.book.zookeeper:2181", 5000, new GetData_API_ASync_Usage());</p> <p>connectedSemaphore.await();</p> <p> zk.create(path , "123".getBytes(), Ids.OPEN_ACL_UNSAFE, CreateMode, EPHEMERAL);<br /> zk.getData(path, true, new IDataCallback(), null);<br /> zk.setData(path, "123".getBytes(), -1);</p> <p>Thread.sleep(Integer.MAX_VALUE);</p> </blockquote> <p>}</p> <p>public void process(WatchedEvent event) {<!-- --></p> <blockquote> <p>if(KeeperState.SyncConnected == event.getState()) {<!-- --></p> <blockquote> <p>if(KeeperState.SyncConnected == event.getState()) {<!-- --></p> <blockquote> <p>if(EventType.None == event.getType() &amp;&amp; null == event.getPath()) {<!-- --></p> <blockquote> <p>connectedSemaphore.countDown();</p> </blockquote> <p>} else if (event.getType == EventType.NodeChildrenChanged) {<!-- --></p> <blockquote> <p>try {<!-- --></p> <blockquote> <p>zk.getData(event.getPath(), true, new IDataCallback(), null);</p> </blockquote> <p>} catch (Exception e) {}</p> </blockquote> <p>}</p> </blockquote> <p>}</p> </blockquote> <p>}</p> </blockquote> <p>}</p> </blockquote> <p>}</p> <p>class IChildren2Callback implements AsyncCallback.Children2Callback {<!-- --></p> <blockquote> <p>public void processResult(int rc, String path, Object ctx, List&lt;String&gt; children, Stat stat) {<!-- --></p> <blockquote> <p>System.out.println(rc +", " + path + ", " + new String(data));</p> <p>System.out.println(stat.getCzxid() + "," + stat.getVersion());</p> </blockquote> <p>}</p> </blockquote> <p>}</p> <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 运行程序，输出结果如下：</p> <blockquote> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220823/997175fb8b27d37cb1b132f128b751b6.jpg" alt="ZooKeeper之Java客户端API使用—读取数据。"></p> </blockquote> <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 上面就是使用getData的异步接口来获取节点数据内容的示例程序。</p> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-81531.htm">动物接种途径有哪些类型（动物接种应掌握哪些要点）</a></p>
+                                        <p>下一个：<a href="/news/article-82212.htm">开宠物医院需要资质吗（想开个宠物医院需要考什么证）</a></p>
+                                    </div>
+                                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-77394.htm" title="孕妇水果餐怎么做(孕妇每日水果餐怎么搭配)">孕妇水果餐怎么做(孕妇每日水果餐怎么搭配)</a></li>
+                        <li class="py-2"><a href="/news/article-64974.htm" title="进程,内核线程,用户线程,协程,纤程&#8230;&#8230;操作系统世界观">进程,内核线程,用户线程,协程,纤程&#8230;&#8230;操作系统世界观</a></li>
+                        <li class="py-2"><a href="/news/article-74696.htm" title="附近免费领养小狗电话（附近领养狗狗）">附近免费领养小狗电话（附近领养狗狗）</a></li>
+                        <li class="py-2"><a href="/news/article-79449.htm" title="c# 一些警告的处理方法">c# 一些警告的处理方法</a></li>
+                        <li class="py-2"><a href="/news/article-70690.htm" title="领养宠物协议书范本大全下载 领养宠物协议书范本大全下载图片">领养宠物协议书范本大全下载 领养宠物协议书范本大全下载图片</a></li>
+                        <li class="py-2"><a href="/news/article-80840.htm" title="大兴宠物医院电话号码多少（大兴 宠物）">大兴宠物医院电话号码多少（大兴 宠物）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-21-free-v2ray.htm" title="推荐免费VPN排名 | 3月21日19.5M/S|免费Clash/SSR/Shadowrocket/V2ray免费节点订阅分享">推荐免费VPN排名 | 3月21日19.5M/S|免费Clash/SSR/Shadowrocket/V2ray免费节点订阅分享</a></li>
+                        <li class="py-2"><a href="/news/article-80839.htm" title="java遍历map、map键排序、值排序">java遍历map、map键排序、值排序</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-9-free-v2ray-subscribe.htm" title="推荐免费VPN排名 | 3月9日21.9M/S|免费Shadowrocket/SSR/Clash/V2ray免费节点订阅分享">推荐免费VPN排名 | 3月9日21.9M/S|免费Shadowrocket/SSR/Clash/V2ray免费节点订阅分享</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-13-clash-v2ray-ss-ssr.htm" title="推荐免费VPN排名 | 3月13日22.7M/S|免费Clash/Shadowrocket/SSR/V2ray免费节点订阅分享">推荐免费VPN排名 | 3月13日22.7M/S|免费Clash/Shadowrocket/SSR/V2ray免费节点订阅分享</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">81</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">3</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--Welcome One End-->
+    </div><!-- /.page-wrapper -->
+        <footer class="site-footer">
+        <div class="site-footer-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="site-footer-bottom__inner">
+                            <div class="site-footer-bottom__left">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                                <p>
+                                    <a href="/">推荐免费VPN排名 订阅机场节点中文网</a> 版权所有 Powered by WordPress
+                                </p>
+                            </div>
+                            <ul class="site-footer-bottom__menu list-unstyled">
+                                <li><a href="#">Privacy Policy</a></li>
+                                <li><a href="#">Terms of Condition</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div class="mobile-nav__wrapper">
+        <div class="mobile-nav__overlay mobile-nav__toggler"></div>
+        <!-- /.mobile-nav__overlay -->
+        <div class="mobile-nav__content">
+            <span class="mobile-nav__close mobile-nav__toggler"></span>
+            <div class="logo-box">
+                <a href="/" aria-label="logo image">Clash Mihomo</a>
+            </div>
+            <!-- /.logo-box -->
+            <div class="mobile-nav__container"></div>
+            <!-- /.mobile-nav__container -->
+            <div class="mobile-nav__top">
+                <div class="mobile-nav__social">
+                    <a href="#" class="fab fa-twitter"></a>
+                    <a href="#" class="fab fa-facebook-square"></a>
+                    <a href="#" class="fab fa-pinterest-p"></a>
+                    <a href="#" class="fab fa-instagram"></a>
+                </div><!-- /.mobile-nav__social -->
+            </div><!-- /.mobile-nav__top -->
+        </div>
+        <!-- /.mobile-nav__content -->
+    </div>
+    <!-- /.mobile-nav__wrapper -->
+    <div class="side-menu__block">
+        <div class="side-menu__block-overlay custom-cursor__overlay side-menu__toggler">
+            <div class="cursor"></div>
+            <div class="cursor-follower"></div>
+        </div><!-- /.side-menu__block-overlay -->
+        <div class="side-menu__block-inner ">
+            <p class="side-menu__block__text site-footer__copy-text">Copyright &copy; 2021.Company name All rights reserved.<a target="_blank" href="https://sc.chinaz.com/moban/">&#x7F51;&#x9875;&#x6A21;&#x677F;</a></p>
+        </div><!-- /.side-menu__block-inner -->
+    </div><!-- /.side-menu__block -->
+    <a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="fa fa-angle-up"></i></a>
+    <script src="/assets/website/js/frontend/clashmihomo/jquery/jquery-3.5.1.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/jarallax/jarallax.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/jquery-ajaxchimp/jquery.ajaxchimp.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/jquery-appear/jquery.appear.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/jquery-circle-progress/jquery.circle-progress.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/jquery-magnific-popup/jquery.magnific-popup.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/jquery-validate/jquery.validate.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/nouislider/nouislider.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/odometer/odometer.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/swiper/swiper.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/tiny-slider/tiny-slider.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/wnumb/wNumb.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/wow/wow.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/isotope/isotope.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/countdown/countdown.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/owl-carousel/owl.carousel.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/twentytwenty/twentytwenty.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/twentytwenty/jquery.event.move.js"></script>
+    <script src="http://ditu.google.cn/maps/api/js?key=AIzaSyATY4Rxc8jNvDpsK8ZetC7JyN4PFVYGCGM"></script>
+    <!-- template js -->
+    <script src="/assets/website/js/frontend/clashmihomo/kitecx.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
