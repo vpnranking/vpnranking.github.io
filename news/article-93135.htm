@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://vpnranking.github.io/news/article-93135.htm" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>如何在 C# 循环中捕获局部变量？</title>
+        <meta name="description" content="问题： 我遇到了一个有趣的问题，它的代码大概是这样的。 List&lt;Func&lt;int&gt;&gt;&nbsp;actions&nbsp;=&nbsp;new&nbsp;List&lt;Fu" />
+        <link rel="icon" href="/assets/website/img/clashmihomo/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="推荐免费VPN排名 订阅机场节点中文网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://vpnranking.github.io/news/article-93135.htm" />
+    <meta property="og:site_name" content="推荐免费VPN排名 订阅机场节点中文网" />
+    <meta property="og:title" content="如何在 C# 循环中捕获局部变量？" />
+    <meta property="og:image" content="https://vpnranking.github.io/uploads/20240920-1/81872b5860ec108c15419f4fedba1ab1.webp" />
+        <meta property="og:release_date" content="2025-04-11T08:56:28" />
+    <meta property="og:updated_time" content="2025-04-11T08:56:28" />
+        <meta property="og:description" content="问题： 我遇到了一个有趣的问题，它的代码大概是这样的。 List&lt;Func&lt;int&gt;&gt;&nbsp;actions&nbsp;=&nbsp;new&nbsp;List&lt;Fu" />
+        
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/animate/animate.min.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/fontawesome/css/all.min.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/jarallax/jarallax.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/jquery-magnific-popup/jquery.magnific-popup.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/nouislider/nouislider.min.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/nouislider/nouislider.pips.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/odometer/odometer.min.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/swiper/swiper.min.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/kitecx-icons/style.css">
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/tiny-slider/tiny-slider.min.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/reey-font/stylesheet.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/owl-carousel/owl.carousel.min.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/owl-carousel/owl.theme.default.min.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/twentytwenty/twentytwenty.css" />
+    <!-- template styles -->
+    <link rel="stylesheet" href="/assets/website/css/clashmihomo/kitecx.css" />
+    <link rel="stylesheet" href="/assets/website/css/clashmihomo/kitecx-responsive.css" />
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="如何在 C# 循环中捕获局部变量？">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NTDMVXZVYN"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-NTDMVXZVYN');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <div class="preloader">
+        <img class="preloader__image" width="60" src="assets/images/loader.png" alt="" />
+    </div>
+    <!-- /.preloader -->
+    <div class="page-wrapper">
+                <header class="main-header clearfix">
+            <div class="container">
+                <div class="main-menu-wrapper">
+                    <div class="main-header__logo">
+                                                <a href="/">
+                            <span>推荐免费VPN排名</span>
+                        </a>
+                                            </div>
+                    <div class="main-menu-wrapper__bottom">
+                        <nav class="main-menu">
+                            <div class="main-menu__inner">
+                                <a href="#" class="mobile-nav__toggler"><i class="fa fa-bars"></i></a>
+                                <ul class="main-menu__list">
+                                                                        <li><a href="/">首页</a></li>
+                                                                        <li><a href="/free-nodes/">免费节点</a></li>
+                                                                        <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                        <li><a href="/news/">新闻资讯</a></li>
+                                                                        <li><a href="/client.htm">客户端</a></li>
+                                                                    </ul>
+                                
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="stricky-header stricked-menu main-menu">
+            <div class="sticky-header__content"></div><!-- /.sticky-header__content -->
+        </div><!-- /.stricky-header -->
+        <!--Page Header Start-->
+        <section class="page-header" style="background-image: url(/assets/website/img/clashmihomo/backgrounds/page-header-bg.jpg);">
+            <div class="page-header-border"></div>
+            <div class="page-header-border page-header-border-two"></div>
+            <div class="page-header-border page-header-border-three"></div>
+            <div class="page-header-border page-header-border-four"></div>
+            <div class="page-header-border page-header-border-five"></div>
+            <div class="page-header-border page-header-border-six"></div>
+            <div class="container">
+                <div class="page-header__inner">
+                    <h1>如何在 C# 循环中捕获局部变量？</h1>
+                    <ul class="thm-breadcrumb list-unstyled">
+                        <li><a href="/">首页</a></li>
+                        <li><span>/</span></li>
+                        <li><a href="/news/">新闻资讯</a></li>
+                        <li><span>/</span></li>
+                        <li>正文</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <!--Page Header End-->
+        <!--Welcome One Start-->
+        <section class="welcome-one py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                                        <input type="hidden" id="share-website-info" data-name="Clash Meta免费节点订阅站" data-url="https://clash-meta.github.io">
+                  				  				  				<div id="content_views" class="htmledit_views"> <h2>问题：</h2> <p>我遇到了一个有趣的问题，它的代码大概是这样的。</p> <pre><code>List&lt;Func&lt;int&gt;&gt;&nbsp;actions&nbsp;=&nbsp;new&nbsp;List&lt;Func&lt;int&gt;&gt;();  int&nbsp;variable&nbsp;=&nbsp;0; while&nbsp;(variable&nbsp;&lt;&nbsp;5) { &nbsp;&nbsp;&nbsp;&nbsp;actions.Add(()&nbsp;=&gt;&nbsp;variable&nbsp;*&nbsp;2); &nbsp;&nbsp;&nbsp;&nbsp;++&nbsp;variable; }  foreach&nbsp;(var&nbsp;act&nbsp;in&nbsp;actions) { &nbsp;&nbsp;&nbsp;&nbsp;Console.WriteLine(act.Invoke()); }  </code></pre> <p>我的期望输出是&nbsp;<code>0,2,4,6,8</code>，但它最终输出的是五个 10，看起来像是这些 action 上下文捕获的都是同一个变量。</p> <p>请问是否有变通的方法实现我要的预期结果呢？</p> <h2>解答方案：</h2> <p>变通方法就是在你的 loop 循环体中使用一个中间变量，并将其送入到 lambda 体中，参考如下代码：</p> <pre><code class="language-cs">List&lt;Func&lt;int&gt;&gt;&nbsp;actions&nbsp;=&nbsp;new&nbsp;List&lt;Func&lt;int&gt;&gt;();  int&nbsp;variable&nbsp;=&nbsp;0; while&nbsp;(variable&nbsp;&lt;&nbsp;5) { &nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;variable1&nbsp;=&nbsp;variable; &nbsp;&nbsp;&nbsp;&nbsp;actions.Add(()&nbsp;=&gt;&nbsp;variable1&nbsp;*&nbsp;2); &nbsp;&nbsp;&nbsp;&nbsp;++variable; }  foreach&nbsp;(var&nbsp;act&nbsp;in&nbsp;actions) { &nbsp;&nbsp;&nbsp;&nbsp;Console.WriteLine(act.Invoke()); }  Console.ReadLine();  </code></pre> <p>其实这种情况在多线程下也同样会发生，比如下面的代码：</p> <pre><code class="language-cs">for&nbsp;(int&nbsp;counter&nbsp;=&nbsp;1;&nbsp;counter&nbsp;&lt;=&nbsp;5;&nbsp;counter++) { &nbsp;&nbsp;&nbsp;&nbsp;new&nbsp;Thread&nbsp;(()&nbsp;=&gt;&nbsp;Console.Write&nbsp;(counter)).Start(); }  </code></pre> <p>你以为会打印出&nbsp;<code>1,2,3,4,5</code>，最后的结果非常有趣，在我这里的输出结果是：<code>2,1,3,3,4</code>&nbsp;，你那边的结果肯定又不一样了。</p> <p>唯一的解决方案就是使用&nbsp;<code>局部变量</code>，修改后的代码如下：</p> <pre><code class="language-cs">for&nbsp;(int&nbsp;counter&nbsp;=&nbsp;1;&nbsp;counter&nbsp;&lt;=&nbsp;5;&nbsp;counter++) { &nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;localVar=&nbsp;counter; &nbsp;&nbsp;&nbsp;&nbsp;new&nbsp;Thread&nbsp;(()&nbsp;=&gt;&nbsp;Console.Write&nbsp;(localVar)).Start(); }  </code></pre> <h2>总结</h2> <p>可能有很多朋友不知道为什么加了一个&nbsp;<code>variable1</code>&nbsp;变量之后，代码就正确的，要想分析，可以看 C# 生成的 IL 代码。</p> <pre><code class="language-cs">private&nbsp;static&nbsp;void&nbsp;Main(string[]&nbsp;args) { &nbsp;List&lt;Func&lt;int&gt;&gt;&nbsp;actions&nbsp;=&nbsp;new&nbsp;List&lt;Func&lt;int&gt;&gt;(); &nbsp;for&nbsp;(int&nbsp;variable&nbsp;=&nbsp;0;&nbsp;variable&nbsp;&lt;&nbsp;5;&nbsp;variable++) &nbsp;{ &nbsp;&nbsp;&lt;&gt;c__DisplayClass0_0&nbsp;&lt;&gt;c__DisplayClass0_&nbsp;=&nbsp;new&nbsp;&lt;&gt;c__DisplayClass0_0(); &nbsp;&nbsp;&lt;&gt;c__DisplayClass0_.variable1&nbsp;=&nbsp;variable; &nbsp;&nbsp;actions.Add(new&nbsp;Func&lt;int&gt;(&lt;&gt;c__DisplayClass0_.&lt;Main&gt;b__0)); &nbsp;} &nbsp;foreach&nbsp;(Func&lt;int&gt;&nbsp;act&nbsp;in&nbsp;actions) &nbsp;{ &nbsp;&nbsp;Console.WriteLine(act()); &nbsp;} &nbsp;Console.ReadLine(); }  </code></pre> <p>可以清楚的看到，那个所谓的&nbsp;<code>variable1</code>&nbsp;成了匿名类&nbsp;<code>c__DisplayClass0_0</code>&nbsp;下的字段了，而且foreach循环中每次都是new的，所以这个字段必然不一样，这也就保证了正确的结果。</p> </p></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-92382.htm">宠物猫疫苗一般多少钱一针（宠物猫疫苗多少钱一针?）</a></p>
+                                        <p>下一个：<a href="/news/article-93136.htm">深圳市领养宠物中心有哪些（深圳领养宠物狗免费的地方在哪里）</a></p>
+                                    </div>
+                                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2025-3-14-free-v2ray-subscribe.htm" title="推荐免费VPN排名 | 3月14日18.7M/S|免费SSR/V2ray/Shadowrocket/Clash免费节点订阅分享">推荐免费VPN排名 | 3月14日18.7M/S|免费SSR/V2ray/Shadowrocket/Clash免费节点订阅分享</a></li>
+                        <li class="py-2"><a href="/news/article-65588.htm" title="宠物打疫苗后被咬还会得病吗（宠物打疫苗之后咬人怎么办）">宠物打疫苗后被咬还会得病吗（宠物打疫苗之后咬人怎么办）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-4-node-share-links.htm" title="推荐免费VPN排名 | 3月4日21.6M/S|免费Clash/V2ray/SSR/Shadowrocket免费节点订阅分享">推荐免费VPN排名 | 3月4日21.6M/S|免费Clash/V2ray/SSR/Shadowrocket免费节点订阅分享</a></li>
+                        <li class="py-2"><a href="/news/article-72014.htm" title="广州宠物救助中心电话是多少号码（广州宠物救助中心电话是多少号码啊）">广州宠物救助中心电话是多少号码（广州宠物救助中心电话是多少号码啊）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-25-free-subscribe-node.htm" title="推荐免费VPN排名 | 3月25日18.2M/S|免费Clash/V2ray/SSR/Shadowrocket免费节点订阅分享">推荐免费VPN排名 | 3月25日18.2M/S|免费Clash/V2ray/SSR/Shadowrocket免费节点订阅分享</a></li>
+                        <li class="py-2"><a href="/news/article-80839.htm" title="java遍历map、map键排序、值排序">java遍历map、map键排序、值排序</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-24-free-v2ray-subscribe.htm" title="推荐免费VPN排名 | 3月24日19.4M/S|免费SSR/Shadowrocket/V2ray/Clash免费节点订阅分享">推荐免费VPN排名 | 3月24日19.4M/S|免费SSR/Shadowrocket/V2ray/Clash免费节点订阅分享</a></li>
+                        <li class="py-2"><a href="/news/article-87957.htm" title="动物医院实践心得500字作文大全怎么写（动物医院社会实践报告）">动物医院实践心得500字作文大全怎么写（动物医院社会实践报告）</a></li>
+                        <li class="py-2"><a href="/news/article-82919.htm" title="Maven配置及IDEA中配置Maven详解">Maven配置及IDEA中配置Maven详解</a></li>
+                        <li class="py-2"><a href="/news/article-74695.htm" title="网上卖什么产品比较挣钱（适合新手做的生意）">网上卖什么产品比较挣钱（适合新手做的生意）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">39</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">87</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--Welcome One End-->
+    </div><!-- /.page-wrapper -->
+        <footer class="site-footer">
+        <div class="site-footer-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="site-footer-bottom__inner">
+                            <div class="site-footer-bottom__left">
+                                                    <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/free-nodes/">免费节点</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                                <p>
+                                    <a href="/">推荐免费VPN排名 订阅机场节点中文网</a> 版权所有 Powered by WordPress
+                                </p>
+                            </div>
+                            <ul class="site-footer-bottom__menu list-unstyled">
+                                <li><a href="#">Privacy Policy</a></li>
+                                <li><a href="#">Terms of Condition</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div class="mobile-nav__wrapper">
+        <div class="mobile-nav__overlay mobile-nav__toggler"></div>
+        <!-- /.mobile-nav__overlay -->
+        <div class="mobile-nav__content">
+            <span class="mobile-nav__close mobile-nav__toggler"></span>
+            <div class="logo-box">
+                <a href="/" aria-label="logo image">Clash Mihomo</a>
+            </div>
+            <!-- /.logo-box -->
+            <div class="mobile-nav__container"></div>
+            <!-- /.mobile-nav__container -->
+            <div class="mobile-nav__top">
+                <div class="mobile-nav__social">
+                    <a href="#" class="fab fa-twitter"></a>
+                    <a href="#" class="fab fa-facebook-square"></a>
+                    <a href="#" class="fab fa-pinterest-p"></a>
+                    <a href="#" class="fab fa-instagram"></a>
+                </div><!-- /.mobile-nav__social -->
+            </div><!-- /.mobile-nav__top -->
+        </div>
+        <!-- /.mobile-nav__content -->
+    </div>
+    <!-- /.mobile-nav__wrapper -->
+    <div class="side-menu__block">
+        <div class="side-menu__block-overlay custom-cursor__overlay side-menu__toggler">
+            <div class="cursor"></div>
+            <div class="cursor-follower"></div>
+        </div><!-- /.side-menu__block-overlay -->
+        <div class="side-menu__block-inner ">
+            <p class="side-menu__block__text site-footer__copy-text">Copyright &copy; 2021.Company name All rights reserved.<a target="_blank" href="https://sc.chinaz.com/moban/">&#x7F51;&#x9875;&#x6A21;&#x677F;</a></p>
+        </div><!-- /.side-menu__block-inner -->
+    </div><!-- /.side-menu__block -->
+    <a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="fa fa-angle-up"></i></a>
+    <script src="/assets/website/js/frontend/clashmihomo/jquery/jquery-3.5.1.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/jarallax/jarallax.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/jquery-ajaxchimp/jquery.ajaxchimp.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/jquery-appear/jquery.appear.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/jquery-circle-progress/jquery.circle-progress.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/jquery-magnific-popup/jquery.magnific-popup.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/jquery-validate/jquery.validate.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/nouislider/nouislider.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/odometer/odometer.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/swiper/swiper.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/tiny-slider/tiny-slider.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/wnumb/wNumb.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/wow/wow.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/isotope/isotope.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/countdown/countdown.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/owl-carousel/owl.carousel.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/twentytwenty/twentytwenty.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/twentytwenty/jquery.event.move.js"></script>
+    <script src="http://ditu.google.cn/maps/api/js?key=AIzaSyATY4Rxc8jNvDpsK8ZetC7JyN4PFVYGCGM"></script>
+    <!-- template js -->
+    <script src="/assets/website/js/frontend/clashmihomo/kitecx.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
