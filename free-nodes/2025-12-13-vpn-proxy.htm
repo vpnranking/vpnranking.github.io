@@ -334,9 +334,14 @@ V2Ray支持VMess、Shadowsocks、Trojan等主流协议，满足不同用户和�
     </div>
 <h4>FAQ</h4>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>如何识别节点是否被封锁或限速？</h5></div>
+    <div class="panel-heading"><h5>Quantumult X 的分流规则如何设置？</h5></div>
     <div class="panel-body">
-        通过对比不同节点的 speedtest、ping、下载测速以及 traceroute 路由变化来判断；若多个节点同时异常可能是本地网络问题，单个节点异常则可能被封锁或运营商限速，应尝试更换端口或传输方式。<hr />    </div>
+        Quantumult X 通过规则分组来控制流量走向。用户可自定义策略组，将特定网站流量指向不同节点。编辑规则文件时，可利用 GEOIP、DOMAIN-SUFFIX 等指令精确管理网络行为。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Shadowrocket 的自动切换功能如何配置？</h5></div>
+    <div class="panel-body">
+        Shadowrocket 支持根据策略组和节点延迟自动切换最优节点。用户可设置测速频率和延迟阈值，程序会定期测试节点并自动切换，以保证网络稳定性和速度。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>Nekobox 可以自定义路由规则吗？</h5></div>
@@ -344,14 +349,9 @@ V2Ray支持VMess、Shadowsocks、Trojan等主流协议，满足不同用户和�
         支持。用户可通过界面或配置文件定义路由规则，按域名、IP 或端口匹配不同节点，实现流量分流。自定义规则增强了网络访问灵活性和安全性。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>VMess AEAD 加密在高封锁网络的作用？</h5></div>
+    <div class="panel-heading"><h5>Potatso Lite 是否支持节点手动排序？</h5></div>
     <div class="panel-body">
-        AEAD 加密可防止数据篡改和流量特征泄露，降低被封锁和 DPI 检测风险。保证节点长期可用，提高数据传输安全性和访问可靠性，优化用户科学上网体验。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Clash 订阅被墙或无法下载如何绕过？</h5></div>
-    <div class="panel-body">
-        若订阅源被直接屏蔽，可尝试先在境外服务器上用代理代理获取订阅并通过中转服务器公开一个新的链接；或者使用 HTTPS 与 CDN 中转、或将订阅以文件形式托管在不易被封的云存储上。<hr />    </div>
+        支持。用户可以根据延迟或使用需求手动排序节点顺序，结合策略组和规则文件实现基本分流管理。虽然不支持自动订阅更新，但满足轻量用户的节点管理需求。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>SSR 是什么？它与 Shadowsocks 有何不同？</h5></div>
@@ -364,9 +364,9 @@ V2Ray支持VMess、Shadowsocks、Trojan等主流协议，满足不同用户和�
         PassWall2 是基于 OpenWRT 的插件，只要路由器支持该固件，就能安装运行。常见型号如小米路由、斐讯、软路由都可以使用，通过 Web 界面操作，适合家庭网络使用场景。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Quantumult X 的分流规则如何设置？</h5></div>
+    <div class="panel-heading"><h5>如何识别节点是否被封锁或限速？</h5></div>
     <div class="panel-body">
-        Quantumult X 通过规则分组来控制流量走向。用户可自定义策略组，将特定网站流量指向不同节点。编辑规则文件时，可利用 GEOIP、DOMAIN-SUFFIX 等指令精确管理网络行为。<hr />    </div>
+        通过对比不同节点的 speedtest、ping、下载测速以及 traceroute 路由变化来判断；若多个节点同时异常可能是本地网络问题，单个节点异常则可能被封锁或运营商限速，应尝试更换端口或传输方式。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>Shadowrocket 的节点测速如何优化连接？</h5></div>
@@ -374,14 +374,14 @@ V2Ray支持VMess、Shadowsocks、Trojan等主流协议，满足不同用户和�
         Shadowrocket 测试节点延迟和丢包率，并根据结果排序策略组节点。延迟低的节点优先使用，可保证网页浏览、视频播放和游戏连接速度和稳定性，提高整体网络体验。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Potatso Lite 是否支持节点手动排序？</h5></div>
+    <div class="panel-heading"><h5>VMess AEAD 加密在高封锁网络的作用？</h5></div>
     <div class="panel-body">
-        支持。用户可以根据延迟或使用需求手动排序节点顺序，结合策略组和规则文件实现基本分流管理。虽然不支持自动订阅更新，但满足轻量用户的节点管理需求。<hr />    </div>
+        AEAD 加密可防止数据篡改和流量特征泄露，降低被封锁和 DPI 检测风险。保证节点长期可用，提高数据传输安全性和访问可靠性，优化用户科学上网体验。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Shadowrocket 的自动切换功能如何配置？</h5></div>
+    <div class="panel-heading"><h5>Clash 订阅被墙或无法下载如何绕过？</h5></div>
     <div class="panel-body">
-        Shadowrocket 支持根据策略组和节点延迟自动切换最优节点。用户可设置测速频率和延迟阈值，程序会定期测试节点并自动切换，以保证网络稳定性和速度。    </div>
+        若订阅源被直接屏蔽，可尝试先在境外服务器上用代理代理获取订阅并通过中转服务器公开一个新的链接；或者使用 HTTPS 与 CDN 中转、或将订阅以文件形式托管在不易被封的云存储上。    </div>
 </div>
 <div class="panel panel-default mt-5">
     <div class="panel-heading">
@@ -410,16 +410,16 @@ V2Ray支持VMess、Shadowsocks、Trojan等主流协议，满足不同用户和�
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2025-12-21-node-share.htm" title="推荐免费VPN排名 | 12月21日21.9M/S|免费Shadowrocket节点/SSR节点/Singbox节点/V2ray节点/Clash节点免费节点订阅分享">推荐免费VPN排名 | 12月21日21.9M/S|免费Shadowrocket节点/SSR节点/Singbox节点/V2ray节点/Clash节点免费节点订阅分享</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-22-share-vpn.htm" title="推荐免费VPN排名 | 11月22日19.3M/S|免费V2ray节点/Singbox节点/Clash节点/Shadowrocket节点/SSR节点免费节点订阅分享">推荐免费VPN排名 | 11月22日19.3M/S|免费V2ray节点/Singbox节点/Clash节点/Shadowrocket节点/SSR节点免费节点订阅分享</a></li>
                         <li class="py-2"><a href="/free-nodes/2025-11-19-mianfei-vpn.htm" title="推荐免费VPN排名 | 11月19日20.4M/S|免费SSR节点/Clash节点/V2ray节点/Singbox节点/Shadowrocket节点免费节点订阅分享">推荐免费VPN排名 | 11月19日20.4M/S|免费SSR节点/Clash节点/V2ray节点/Singbox节点/Shadowrocket节点免费节点订阅分享</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-11-8-vpn-github.htm" title="推荐免费VPN排名 | 11月8日20.4M/S|免费Singbox节点/Shadowrocket节点/SSR节点/Clash节点/V2ray节点免费节点订阅分享">推荐免费VPN排名 | 11月8日20.4M/S|免费Singbox节点/Shadowrocket节点/SSR节点/Clash节点/V2ray节点免费节点订阅分享</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-11-23-free-vpn-node.htm" title="推荐免费VPN排名 | 11月23日21.7M/S|免费SSR节点/V2ray节点/Clash节点/Shadowrocket节点/Singbox节点免费节点订阅分享">推荐免费VPN排名 | 11月23日21.7M/S|免费SSR节点/V2ray节点/Clash节点/Shadowrocket节点/Singbox节点免费节点订阅分享</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-11-7-free-node-subscribe-links.htm" title="推荐免费VPN排名 | 11月7日23M/S|免费Singbox节点/SSR节点/Clash节点/Shadowrocket节点/V2ray节点免费节点订阅分享">推荐免费VPN排名 | 11月7日23M/S|免费Singbox节点/SSR节点/Clash节点/Shadowrocket节点/V2ray节点免费节点订阅分享</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-12-5-node-share-links.htm" title="推荐免费VPN排名 | 12月5日22.3M/S|免费V2ray节点/Singbox节点/Shadowrocket节点/SSR节点/Clash节点免费节点订阅分享">推荐免费VPN排名 | 12月5日22.3M/S|免费V2ray节点/Singbox节点/Shadowrocket节点/SSR节点/Clash节点免费节点订阅分享</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-11-6-node-share.htm" title="推荐免费VPN排名 | 11月6日18.9M/S|免费SSR节点/Shadowrocket节点/V2ray节点/Clash节点/Singbox节点免费节点订阅分享">推荐免费VPN排名 | 11月6日18.9M/S|免费SSR节点/Shadowrocket节点/V2ray节点/Clash节点/Singbox节点免费节点订阅分享</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-11-15-mianfei-vpn.htm" title="推荐免费VPN排名 | 11月15日19.3M/S|免费Shadowrocket节点/Clash节点/V2ray节点/Singbox节点/SSR节点免费节点订阅分享">推荐免费VPN排名 | 11月15日19.3M/S|免费Shadowrocket节点/Clash节点/V2ray节点/Singbox节点/SSR节点免费节点订阅分享</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-11-12-free-vpn.htm" title="推荐免费VPN排名 | 11月12日19.1M/S|免费Clash节点/Singbox节点/Shadowrocket节点/V2ray节点/SSR节点免费节点订阅分享">推荐免费VPN排名 | 11月12日19.1M/S|免费Clash节点/Singbox节点/Shadowrocket节点/V2ray节点/SSR节点免费节点订阅分享</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-11-5-node-share.htm" title="推荐免费VPN排名 | 11月5日23M/S|免费Shadowrocket节点/SSR节点/Singbox节点/V2ray节点/Clash节点免费节点订阅分享">推荐免费VPN排名 | 11月5日23M/S|免费Shadowrocket节点/SSR节点/Singbox节点/V2ray节点/Clash节点免费节点订阅分享</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-12-4-node-share.htm" title="推荐免费VPN排名 | 12月4日19.9M/S|免费Clash节点/SSR节点/Singbox节点/V2ray节点/Shadowrocket节点免费节点订阅分享">推荐免费VPN排名 | 12月4日19.9M/S|免费Clash节点/SSR节点/Singbox节点/V2ray节点/Shadowrocket节点免费节点订阅分享</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-12-7-vpn-free.htm" title="推荐免费VPN排名 | 12月7日22.3M/S|免费Shadowrocket节点/Clash节点/SSR节点/Singbox节点/V2ray节点免费节点订阅分享">推荐免费VPN排名 | 12月7日22.3M/S|免费Shadowrocket节点/Clash节点/SSR节点/Singbox节点/V2ray节点免费节点订阅分享</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-12-10-free-vpn-node.htm" title="推荐免费VPN排名 | 12月10日18.1M/S|免费Shadowrocket节点/Singbox节点/V2ray节点/Clash节点/SSR节点免费节点订阅分享">推荐免费VPN排名 | 12月10日18.1M/S|免费Shadowrocket节点/Singbox节点/V2ray节点/Clash节点/SSR节点免费节点订阅分享</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-12-2-top-vpn.htm" title="推荐免费VPN排名 | 12月2日19M/S|免费Shadowrocket节点/V2ray节点/SSR节点/Clash节点/Singbox节点免费节点订阅分享">推荐免费VPN排名 | 12月2日19M/S|免费Shadowrocket节点/V2ray节点/SSR节点/Clash节点/Singbox节点免费节点订阅分享</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-12-14-free-node-subscribe-links.htm" title="推荐免费VPN排名 | 12月14日21.5M/S|免费V2ray节点/Singbox节点/Clash节点/SSR节点/Shadowrocket节点免费节点订阅分享">推荐免费VPN排名 | 12月14日21.5M/S|免费V2ray节点/Singbox节点/Clash节点/SSR节点/Shadowrocket节点免费节点订阅分享</a></li>
                         <li class="py-2"><a href="/free-nodes/2025-11-27-vpn-github.htm" title="推荐免费VPN排名 | 11月27日20.6M/S|免费Singbox节点/V2ray节点/SSR节点/Shadowrocket节点/Clash节点免费节点订阅分享">推荐免费VPN排名 | 11月27日20.6M/S|免费Singbox节点/V2ray节点/SSR节点/Shadowrocket节点/Clash节点免费节点订阅分享</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-12-15-free-vpn.htm" title="推荐免费VPN排名 | 12月15日22.5M/S|免费V2ray节点/Singbox节点/Clash节点/Shadowrocket节点/SSR节点免费节点订阅分享">推荐免费VPN排名 | 12月15日22.5M/S|免费V2ray节点/Singbox节点/Clash节点/Shadowrocket节点/SSR节点免费节点订阅分享</a></li>
                     </ul>
     </div>
 </div>
@@ -431,7 +431,7 @@ V2Ray支持VMess、Shadowsocks、Trojan等主流协议，满足不同用户和�
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">13</span> <a href="/date/2025-12/" title="2025-12 归档">2025-12</a></h4>
+                <h4><span class="badge" style="float: right;">20</span> <a href="/date/2025-12/" title="2025-12 归档">2025-12</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">23</span> <a href="/date/2025-11/" title="2025-11 归档">2025-11</a></h4>
