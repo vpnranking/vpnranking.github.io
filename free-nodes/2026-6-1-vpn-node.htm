@@ -408,34 +408,14 @@ nslookup github.com
     </div>
 <h4>FAQ</h4>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Nekobox 和 Nekoray 有何关系？</h5></div>
-    <div class="panel-body">
-        Nekobox 是 Nekoray 的移动端衍生版，界面简洁，主要适配 Android 平台。两者使用同样的核心逻辑与配置结构，因此订阅文件和节点信息可以兼容共享。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Netch 的 TAP 模式与 TUN 模式区别是什么？</h5></div>
-    <div class="panel-body">
-        TAP 模式模拟以太网接口，适合游戏流量代理；TUN 模式则模拟 IP 层接口，更适合全局代理。根据用途不同可自由选择，但需管理员权限运行。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Potatso Lite 显示证书错误，如何修复？</h5></div>
-    <div class="panel-body">
-        证书错误通常由域名与证书不匹配或证书链不完整引起。请检查服务器证书是否为有效域名签发并包含完整链，如果使用 Let's Encrypt，请确保证书未过期并已正确安装到反向代理或服务端。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>V2Ray 的 Reality 功能是什么？</h5></div>
-    <div class="panel-body">
-        Reality 是 V2Ray 新增的伪装技术，可替代传统 TLS。它无需真实证书，通过公钥验证机制实现端到端加密。相比 Trojan 的 HTTPS 伪装方式，Reality 更轻量、安全且配置更简洁。<hr />    </div>
-</div>
-<div class="panel panel-default">
     <div class="panel-heading"><h5>SSR 的加密方式推荐使用哪种？</h5></div>
     <div class="panel-body">
         SSR 支持多种加密方式，如 aes-256-cfb、chacha20、rc4-md5 等。建议优先选择 chacha20 系列算法，在移动设备上性能更佳，同时具有较强的安全性。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Surfboard 如何结合规则实现智能节点切换？</h5></div>
+    <div class="panel-heading"><h5>Nekobox 和 Nekoray 有何关系？</h5></div>
     <div class="panel-body">
-        Surfboard 可根据规则文件和策略组自动选择延迟低、稳定性高的节点处理流量。不同应用流量可分配不同节点，优化访问速度和稳定性，减少手动切换节点的操作。<hr />    </div>
+        Nekobox 是 Nekoray 的移动端衍生版，界面简洁，主要适配 Android 平台。两者使用同样的核心逻辑与配置结构，因此订阅文件和节点信息可以兼容共享。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>WinXray 如何导入订阅？</h5></div>
@@ -443,9 +423,19 @@ nslookup github.com
         在 WinXray 界面中点击“导入订阅”选项，将机场提供的订阅链接粘贴进去。点击更新后，WinXray 会自动下载节点配置并生成列表，用户可手动选择或自动切换延迟最低的节点使用。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Trojan-Go 的多路复用（mux）如何开启？</h5></div>
+    <div class="panel-heading"><h5>V2Ray 的 Reality 功能是什么？</h5></div>
     <div class="panel-body">
-        Trojan-Go 在配置文件中通过启用 mux 参数即可实现多路复用。此功能允许多个连接共享同一隧道，减少握手延迟并提升整体传输效率，尤其在移动网络中表现出色。<hr />    </div>
+        Reality 是 V2Ray 新增的伪装技术，可替代传统 TLS。它无需真实证书，通过公钥验证机制实现端到端加密。相比 Trojan 的 HTTPS 伪装方式，Reality 更轻量、安全且配置更简洁。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Netch 的 TAP 模式与 TUN 模式区别是什么？</h5></div>
+    <div class="panel-body">
+        TAP 模式模拟以太网接口，适合游戏流量代理；TUN 模式则模拟 IP 层接口，更适合全局代理。根据用途不同可自由选择，但需管理员权限运行。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Surfboard 如何结合规则实现智能节点切换？</h5></div>
+    <div class="panel-body">
+        Surfboard 可根据规则文件和策略组自动选择延迟低、稳定性高的节点处理流量。不同应用流量可分配不同节点，优化访问速度和稳定性，减少手动切换节点的操作。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>VLess 与 Reality 协议可以结合使用吗？</h5></div>
@@ -453,9 +443,19 @@ nslookup github.com
         可以。VLess + Reality 是目前最受欢迎的组合之一。它在无证书情况下实现加密传输，同时具备隐蔽性与速度优势，非常适合需要安全访问的高级代理配置。<hr />    </div>
 </div>
 <div class="panel panel-default">
+    <div class="panel-heading"><h5>Trojan-Go 的多路复用（mux）如何开启？</h5></div>
+    <div class="panel-body">
+        Trojan-Go 在配置文件中通过启用 mux 参数即可实现多路复用。此功能允许多个连接共享同一隧道，减少握手延迟并提升整体传输效率，尤其在移动网络中表现出色。<hr />    </div>
+</div>
+<div class="panel panel-default">
     <div class="panel-heading"><h5>Clash 如何通过策略组实现多节点负载均衡？</h5></div>
     <div class="panel-body">
-        Clash 支持策略组功能，可以根据节点延迟、地区或用途自动选择最佳节点处理流量，实现多节点负载均衡。有效提高访问速度和稳定性，保证网页浏览、视频播放和游戏流畅。    </div>
+        Clash 支持策略组功能，可以根据节点延迟、地区或用途自动选择最佳节点处理流量，实现多节点负载均衡。有效提高访问速度和稳定性，保证网页浏览、视频播放和游戏流畅。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Potatso Lite 显示证书错误，如何修复？</h5></div>
+    <div class="panel-body">
+        证书错误通常由域名与证书不匹配或证书链不完整引起。请检查服务器证书是否为有效域名签发并包含完整链，如果使用 Let's Encrypt，请确保证书未过期并已正确安装到反向代理或服务端。    </div>
 </div>
 <div class="panel panel-default mt-5">
     <div class="panel-heading">
@@ -505,16 +505,16 @@ nslookup github.com
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2026-5-21-free-vpn-node.htm" title="推荐免费VPN排名 | 5月21日22.1M/S|免费V2ray节点/Shadowrocket节点/Clash节点/SSR节点/Trojan节点/Singbox节点免费节点订阅分享">推荐免费VPN排名 | 5月21日22.1M/S|免费V2ray节点/Shadowrocket节点/Clash节点/SSR节点/Trojan节点/Singbox节点免费节点订阅分享</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-5-26-top-vpn-node.htm" title="推荐免费VPN排名 | 5月26日19.2M/S|免费SSR节点/Shadowrocket节点/Trojan节点/Singbox节点/V2ray节点/Clash节点免费节点订阅分享">推荐免费VPN排名 | 5月26日19.2M/S|免费SSR节点/Shadowrocket节点/Trojan节点/Singbox节点/V2ray节点/Clash节点免费节点订阅分享</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-5-25-free-vpn-node.htm" title="推荐免费VPN排名 | 5月25日19.6M/S|免费Shadowrocket节点/Trojan节点/SSR节点/Singbox节点/Clash节点/V2ray节点免费节点订阅分享">推荐免费VPN排名 | 5月25日19.6M/S|免费Shadowrocket节点/Trojan节点/SSR节点/Singbox节点/Clash节点/V2ray节点免费节点订阅分享</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-5-18-vpn-free.htm" title="推荐免费VPN排名 | 5月18日18.8M/S|免费Trojan节点/Singbox节点/V2ray节点/Clash节点/Shadowrocket节点/SSR节点免费节点订阅分享">推荐免费VPN排名 | 5月18日18.8M/S|免费Trojan节点/Singbox节点/V2ray节点/Clash节点/Shadowrocket节点/SSR节点免费节点订阅分享</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-5-9-vpn-proxy.htm" title="推荐免费VPN排名 | 5月9日19.1M/S|免费V2ray节点/Singbox节点/SSR节点/Trojan节点/Clash节点/Shadowrocket节点免费节点订阅分享">推荐免费VPN排名 | 5月9日19.1M/S|免费V2ray节点/Singbox节点/SSR节点/Trojan节点/Clash节点/Shadowrocket节点免费节点订阅分享</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-5-8-top-vpn-node.htm" title="推荐免费VPN排名 | 5月8日20.3M/S|免费Singbox节点/Clash节点/V2ray节点/SSR节点/Shadowrocket节点/Trojan节点免费节点订阅分享">推荐免费VPN排名 | 5月8日20.3M/S|免费Singbox节点/Clash节点/V2ray节点/SSR节点/Shadowrocket节点/Trojan节点免费节点订阅分享</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-5-16-vpn-github.htm" title="推荐免费VPN排名 | 5月16日20M/S|免费Singbox节点/Shadowrocket节点/SSR节点/V2ray节点/Trojan节点/Clash节点免费节点订阅分享">推荐免费VPN排名 | 5月16日20M/S|免费Singbox节点/Shadowrocket节点/SSR节点/V2ray节点/Trojan节点/Clash节点免费节点订阅分享</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-5-7-free-vpn-node.htm" title="推荐免费VPN排名 | 5月7日23M/S|免费Clash节点/V2ray节点/Singbox节点/Shadowrocket节点/Trojan节点/SSR节点免费节点订阅分享">推荐免费VPN排名 | 5月7日23M/S|免费Clash节点/V2ray节点/Singbox节点/Shadowrocket节点/Trojan节点/SSR节点免费节点订阅分享</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-5-30-free-node-subscribe-links.htm" title="推荐免费VPN排名 | 5月30日22.3M/S|免费Clash节点/Singbox节点/V2ray节点/Trojan节点/Shadowrocket节点/SSR节点免费节点订阅分享">推荐免费VPN排名 | 5月30日22.3M/S|免费Clash节点/Singbox节点/V2ray节点/Trojan节点/Shadowrocket节点/SSR节点免费节点订阅分享</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-5-13-free-vpn-node.htm" title="推荐免费VPN排名 | 5月13日22.1M/S|免费Shadowrocket节点/V2ray节点/SSR节点/Singbox节点/Trojan节点/Clash节点免费节点订阅分享">推荐免费VPN排名 | 5月13日22.1M/S|免费Shadowrocket节点/V2ray节点/SSR节点/Singbox节点/Trojan节点/Clash节点免费节点订阅分享</a><hr /></li>
                         <li class="py-2"><a href="/free-nodes/2026-5-27-free-vpn.htm" title="推荐免费VPN排名 | 5月27日20.4M/S|免费SSR节点/Shadowrocket节点/Trojan节点/V2ray节点/Singbox节点/Clash节点免费节点订阅分享">推荐免费VPN排名 | 5月27日20.4M/S|免费SSR节点/Shadowrocket节点/Trojan节点/V2ray节点/Singbox节点/Clash节点免费节点订阅分享</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-5-15-free-node-subscribe-links.htm" title="推荐免费VPN排名 | 5月15日20.1M/S|免费Trojan节点/Singbox节点/Shadowrocket节点/SSR节点/Clash节点/V2ray节点免费节点订阅分享">推荐免费VPN排名 | 5月15日20.1M/S|免费Trojan节点/Singbox节点/Shadowrocket节点/SSR节点/Clash节点/V2ray节点免费节点订阅分享</a><hr /></li>
                         <li class="py-2"><a href="/free-nodes/2026-5-28-vpn-github.htm" title="推荐免费VPN排名 | 5月28日20.7M/S|免费Clash节点/V2ray节点/Trojan节点/Singbox节点/Shadowrocket节点/SSR节点免费节点订阅分享">推荐免费VPN排名 | 5月28日20.7M/S|免费Clash节点/V2ray节点/Trojan节点/Singbox节点/Shadowrocket节点/SSR节点免费节点订阅分享</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-5-4-vpn-proxy.htm" title="推荐免费VPN排名 | 5月4日20.9M/S|免费Shadowrocket节点/Singbox节点/Clash节点/V2ray节点/SSR节点/Trojan节点免费节点订阅分享">推荐免费VPN排名 | 5月4日20.9M/S|免费Shadowrocket节点/Singbox节点/Clash节点/V2ray节点/SSR节点/Trojan节点免费节点订阅分享</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-5-12-free-vpn-node.htm" title="推荐免费VPN排名 | 5月12日20.9M/S|免费Shadowrocket节点/V2ray节点/Clash节点/Singbox节点/SSR节点/Trojan节点免费节点订阅分享">推荐免费VPN排名 | 5月12日20.9M/S|免费Shadowrocket节点/V2ray节点/Clash节点/Singbox节点/SSR节点/Trojan节点免费节点订阅分享</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-5-11-node-share-links.htm" title="推荐免费VPN排名 | 5月11日20.6M/S|免费Shadowrocket节点/V2ray节点/Singbox节点/SSR节点/Trojan节点/Clash节点免费节点订阅分享">推荐免费VPN排名 | 5月11日20.6M/S|免费Shadowrocket节点/V2ray节点/Singbox节点/SSR节点/Trojan节点/Clash节点免费节点订阅分享</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-6-2-free-vpn-node.htm" title="推荐免费VPN排名 | 6月2日23M/S|免费Singbox节点/V2ray节点/Trojan节点/Clash节点/Shadowrocket节点/SSR节点免费节点订阅分享">推荐免费VPN排名 | 6月2日23M/S|免费Singbox节点/V2ray节点/Trojan节点/Clash节点/Shadowrocket节点/SSR节点免费节点订阅分享</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-5-26-top-vpn-node.htm" title="推荐免费VPN排名 | 5月26日19.2M/S|免费SSR节点/Shadowrocket节点/Trojan节点/Singbox节点/V2ray节点/Clash节点免费节点订阅分享">推荐免费VPN排名 | 5月26日19.2M/S|免费SSR节点/Shadowrocket节点/Trojan节点/Singbox节点/V2ray节点/Clash节点免费节点订阅分享</a><hr /></li>
                     </ul>
     </div>
 </div>
@@ -526,7 +526,7 @@ nslookup github.com
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">4</span> <a href="/date/2026-06/" title="2026-06 归档">2026-06</a></h4>
+                <h4><span class="badge" style="float: right;">6</span> <a href="/date/2026-06/" title="2026-06 归档">2026-06</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">29</span> <a href="/date/2026-05/" title="2026-05 归档">2026-05</a></h4>
