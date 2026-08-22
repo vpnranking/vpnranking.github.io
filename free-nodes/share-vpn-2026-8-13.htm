@@ -335,9 +335,9 @@ A：当然。推荐使用Clash for Android或iOS专属工具如Stash、Shadowroc
     </div>
 <h4>FAQ</h4>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>如何在 Sing-box 中设置多个 outbound 实现策略路由？</h5></div>
+    <div class="panel-heading"><h5>Surfboard 可以结合规则实现广告屏蔽吗？</h5></div>
     <div class="panel-body">
-        在 sing-box 的配置中定义多个 outbound 对象并为 routing 模块配置 rules，将不同目的地或应用流量指向对应 outbound，从而实现分流、负载均衡或故障转移等复杂路由策略。<hr />    </div>
+        可以。Surfboard 支持通过规则文件匹配广告域名或 URL，将其阻断或重定向。结合策略组定期更新规则，可以实现自动广告屏蔽，提升网页浏览体验并节省带宽。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>VMess AEAD 加密如何确保数据传输安全？</h5></div>
@@ -345,24 +345,9 @@ A：当然。推荐使用Clash for Android或iOS专属工具如Stash、Shadowroc
         AEAD 加密可防止数据篡改、重放攻击和流量特征泄露。在高封锁环境中保证节点可用，提升数据安全和连接稳定性，降低被检测风险，确保长期安全访问体验。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Quantumult X 中自定义脚本导致规则异常，该如何恢复？</h5></div>
-    <div class="panel-body">
-        先停用或删除最近添加的自定义脚本，重启应用并观察网络行为是否恢复。若无法恢复，备份并重置配置为默认，然后逐个添加脚本以定位导致异常的具体脚本并修复。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>如何用 iptables 限制 V2Ray 服务的访问来源？</h5></div>
-    <div class="panel-body">
-        使用 iptables 规则仅允许可信 IP 或 CDN 的中转 IP 访问服务端口，例如 `iptables -A INPUT -p tcp -s <trusted_ip> --dport 443 -j ACCEPT`，并在默认策略下拒绝其他来源，从而降低被扫描与滥用风险。<hr />    </div>
-</div>
-<div class="panel panel-default">
     <div class="panel-heading"><h5>Clash 如何实现域名白名单策略？</h5></div>
     <div class="panel-body">
         Clash 可以通过策略组结合规则文件，将指定域名或网站加入白名单，实现直连而不经过代理节点。这样可以保证国内访问速度，同时节省节点带宽资源，提高整体网络效率。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Surfboard 可以结合规则实现广告屏蔽吗？</h5></div>
-    <div class="panel-body">
-        可以。Surfboard 支持通过规则文件匹配广告域名或 URL，将其阻断或重定向。结合策略组定期更新规则，可以实现自动广告屏蔽，提升网页浏览体验并节省带宽。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>Nekobox 是否支持多客户端节点管理？</h5></div>
@@ -370,19 +355,34 @@ A：当然。推荐使用Clash for Android或iOS专属工具如Stash、Shadowroc
         支持。Nekobox 与 Shadowsocks、Clash 等客户端独立运行，互不干扰。用户可通过策略组灵活管理节点，实现多客户端分流和网络优化。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Quantumult X 的主要功能是什么？</h5></div>
-    <div class="panel-body">
-        Quantumult X 是一款功能极其强大的 iOS 网络代理应用，支持多种协议和脚本扩展。它可以通过规则分流、广告屏蔽、请求重写等方式优化网络体验。Quantumult X 常被技术用户用于高级自动化与自定义代理策略。<hr />    </div>
-</div>
-<div class="panel panel-default">
     <div class="panel-heading"><h5>Mihomo 节点分组如何保证低延迟访问？</h5></div>
     <div class="panel-body">
         将节点按延迟、地区或用途分组，并启用策略组，系统会根据节点健康和延迟自动选择最佳节点。保证网页浏览、视频播放和游戏流量的低延迟稳定连接。<hr />    </div>
 </div>
 <div class="panel panel-default">
+    <div class="panel-heading"><h5>Quantumult X 中自定义脚本导致规则异常，该如何恢复？</h5></div>
+    <div class="panel-body">
+        先停用或删除最近添加的自定义脚本，重启应用并观察网络行为是否恢复。若无法恢复，备份并重置配置为默认，然后逐个添加脚本以定位导致异常的具体脚本并修复。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>如何在 Sing-box 中设置多个 outbound 实现策略路由？</h5></div>
+    <div class="panel-body">
+        在 sing-box 的配置中定义多个 outbound 对象并为 routing 模块配置 rules，将不同目的地或应用流量指向对应 outbound，从而实现分流、负载均衡或故障转移等复杂路由策略。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>如何用 iptables 限制 V2Ray 服务的访问来源？</h5></div>
+    <div class="panel-body">
+        使用 iptables 规则仅允许可信 IP 或 CDN 的中转 IP 访问服务端口，例如 `iptables -A INPUT -p tcp -s <trusted_ip> --dport 443 -j ACCEPT`，并在默认策略下拒绝其他来源，从而降低被扫描与滥用风险。<hr />    </div>
+</div>
+<div class="panel panel-default">
     <div class="panel-heading"><h5>PassWall2 在路由器中如何更新节点订阅？</h5></div>
     <div class="panel-body">
-        在 PassWall2 面板中点击“订阅管理”，输入或更新订阅链接后，点击“手动更新”即可自动下载最新节点数据。也可设置定时任务每日自动更新，保持配置最新。    </div>
+        在 PassWall2 面板中点击“订阅管理”，输入或更新订阅链接后，点击“手动更新”即可自动下载最新节点数据。也可设置定时任务每日自动更新，保持配置最新。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Quantumult X 的主要功能是什么？</h5></div>
+    <div class="panel-body">
+        Quantumult X 是一款功能极其强大的 iOS 网络代理应用，支持多种协议和脚本扩展。它可以通过规则分流、广告屏蔽、请求重写等方式优化网络体验。Quantumult X 常被技术用户用于高级自动化与自定义代理策略。    </div>
 </div>
 <div class="panel panel-default mt-5">
     <div class="panel-heading">
@@ -430,16 +430,16 @@ A：当然。推荐使用Clash for Android或iOS专属工具如Stash、Shadowroc
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2026-7-27-free-node-subscribe-links.htm" title="推荐免费VPN排名 | 7月27日22.6M/S|免费Shadowrocket节点/Clash节点/V2ray节点/Singbox节点/SSR节点/Trojan节点免费节点订阅分享">推荐免费VPN排名 | 7月27日22.6M/S|免费Shadowrocket节点/Clash节点/V2ray节点/Singbox节点/SSR节点/Trojan节点免费节点订阅分享</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-7-25-free-vpn.htm" title="推荐免费VPN排名 | 7月25日22.2M/S|免费V2ray节点/Singbox节点/SSR节点/Shadowrocket节点/Trojan节点/Clash节点免费节点订阅分享">推荐免费VPN排名 | 7月25日22.2M/S|免费V2ray节点/Singbox节点/SSR节点/Shadowrocket节点/Trojan节点/Clash节点免费节点订阅分享</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-7-14-vpn-free.htm" title="推荐免费VPN排名 | 7月14日20M/S|免费Trojan节点/Singbox节点/Shadowrocket节点/Clash节点/SSR节点/V2ray节点免费节点订阅分享">推荐免费VPN排名 | 7月14日20M/S|免费Trojan节点/Singbox节点/Shadowrocket节点/Clash节点/SSR节点/V2ray节点免费节点订阅分享</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-7-13-free-node-subscribe-links.htm" title="推荐免费VPN排名 | 7月13日18.9M/S|免费Trojan节点/SSR节点/V2ray节点/Shadowrocket节点/Singbox节点/Clash节点免费节点订阅分享">推荐免费VPN排名 | 7月13日18.9M/S|免费Trojan节点/SSR节点/V2ray节点/Shadowrocket节点/Singbox节点/Clash节点免费节点订阅分享</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-7-24-vpn-proxy.htm" title="推荐免费VPN排名 | 7月24日20.8M/S|免费Singbox节点/V2ray节点/Shadowrocket节点/Trojan节点/Clash节点/SSR节点免费节点订阅分享">推荐免费VPN排名 | 7月24日20.8M/S|免费Singbox节点/V2ray节点/Shadowrocket节点/Trojan节点/Clash节点/SSR节点免费节点订阅分享</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/share-vpn-2026-7-29.htm" title="推荐免费VPN排名 | 7月29日22M/S|免费Clash节点/SSR节点/Shadowrocket节点/Singbox节点/V2ray节点/Trojan节点免费节点订阅分享">推荐免费VPN排名 | 7月29日22M/S|免费Clash节点/SSR节点/Shadowrocket节点/Singbox节点/V2ray节点/Trojan节点免费节点订阅分享</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-7-15-vpn-github.htm" title="推荐免费VPN排名 | 7月15日22.4M/S|免费SSR节点/V2ray节点/Trojan节点/Singbox节点/Clash节点/Shadowrocket节点免费节点订阅分享">推荐免费VPN排名 | 7月15日22.4M/S|免费SSR节点/V2ray节点/Trojan节点/Singbox节点/Clash节点/Shadowrocket节点免费节点订阅分享</a><hr /></li>
                         <li class="py-2"><a href="/free-nodes/2026-7-28-free-vpn-node.htm" title="推荐免费VPN排名 | 7月28日23M/S|免费Trojan节点/Shadowrocket节点/SSR节点/Clash节点/Singbox节点/V2ray节点免费节点订阅分享">推荐免费VPN排名 | 7月28日23M/S|免费Trojan节点/Shadowrocket节点/SSR节点/Clash节点/Singbox节点/V2ray节点免费节点订阅分享</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/free-node-subscribe-links-2026-7-31.htm" title="推荐免费VPN排名 | 7月31日21.4M/S|免费V2ray节点/Clash节点/Singbox节点/Trojan节点/Shadowrocket节点/SSR节点免费节点订阅分享">推荐免费VPN排名 | 7月31日21.4M/S|免费V2ray节点/Clash节点/Singbox节点/Trojan节点/Shadowrocket节点/SSR节点免费节点订阅分享</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-7-30-vpn-node.htm" title="推荐免费VPN排名 | 7月30日19.2M/S|免费Clash节点/V2ray节点/Trojan节点/Singbox节点/SSR节点/Shadowrocket节点免费节点订阅分享">推荐免费VPN排名 | 7月30日19.2M/S|免费Clash节点/V2ray节点/Trojan节点/Singbox节点/SSR节点/Shadowrocket节点免费节点订阅分享</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-7-23-mianfei-vpn.htm" title="推荐免费VPN排名 | 7月23日22.9M/S|免费SSR节点/Clash节点/Shadowrocket节点/V2ray节点/Trojan节点/Singbox节点免费节点订阅分享">推荐免费VPN排名 | 7月23日22.9M/S|免费SSR节点/Clash节点/Shadowrocket节点/V2ray节点/Trojan节点/Singbox节点免费节点订阅分享</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-7-25-free-vpn.htm" title="推荐免费VPN排名 | 7月25日22.2M/S|免费V2ray节点/Singbox节点/SSR节点/Shadowrocket节点/Trojan节点/Clash节点免费节点订阅分享">推荐免费VPN排名 | 7月25日22.2M/S|免费V2ray节点/Singbox节点/SSR节点/Shadowrocket节点/Trojan节点/Clash节点免费节点订阅分享</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-8-4-free-vpn-node.htm" title="推荐免费VPN排名 | 8月4日18.3M/S|免费SSR节点/V2ray节点/Singbox节点/Shadowrocket节点/Clash节点/Trojan节点免费节点订阅分享">推荐免费VPN排名 | 8月4日18.3M/S|免费SSR节点/V2ray节点/Singbox节点/Shadowrocket节点/Clash节点/Trojan节点免费节点订阅分享</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/node-share-links-2026-8-11.htm" title="推荐免费VPN排名 | 8月11日21M/S|免费V2ray节点/Clash节点/SSR节点/Trojan节点/Shadowrocket节点/Singbox节点免费节点订阅分享">推荐免费VPN排名 | 8月11日21M/S|免费V2ray节点/Clash节点/SSR节点/Trojan节点/Shadowrocket节点/Singbox节点免费节点订阅分享</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-7-21-free-node-subscribe-links.htm" title="推荐免费VPN排名 | 7月21日20.7M/S|免费Clash节点/V2ray节点/Shadowrocket节点/Trojan节点/Singbox节点/SSR节点免费节点订阅分享">推荐免费VPN排名 | 7月21日20.7M/S|免费Clash节点/V2ray节点/Shadowrocket节点/Trojan节点/Singbox节点/SSR节点免费节点订阅分享</a><hr /></li>
                         <li class="py-2"><a href="/free-nodes/top-vpn-2026-8-1.htm" title="推荐免费VPN排名 | 8月1日21.1M/S|免费Shadowrocket节点/Trojan节点/Clash节点/SSR节点/Singbox节点/V2ray节点免费节点订阅分享">推荐免费VPN排名 | 8月1日21.1M/S|免费Shadowrocket节点/Trojan节点/Clash节点/SSR节点/Singbox节点/V2ray节点免费节点订阅分享</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-8-12-node-share.htm" title="推荐免费VPN排名 | 8月12日21.6M/S|免费Clash节点/SSR节点/V2ray节点/Shadowrocket节点/Singbox节点/Trojan节点免费节点订阅分享">推荐免费VPN排名 | 8月12日21.6M/S|免费Clash节点/SSR节点/V2ray节点/Shadowrocket节点/Singbox节点/Trojan节点免费节点订阅分享</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-8-18-top-vpn-node.htm" title="推荐免费VPN排名 | 8月18日21.3M/S|免费Shadowrocket节点/Clash节点/SSR节点/Trojan节点/Singbox节点/V2ray节点免费节点订阅分享">推荐免费VPN排名 | 8月18日21.3M/S|免费Shadowrocket节点/Clash节点/SSR节点/Trojan节点/Singbox节点/V2ray节点免费节点订阅分享</a><hr /></li>
                     </ul>
     </div>
 </div>
@@ -451,10 +451,10 @@ A：当然。推荐使用Clash for Android或iOS专属工具如Stash、Shadowroc
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">15</span> <a href="/date/2026-08/" title="2026-08 归档">2026-08</a></h4>
+                <h4><span class="badge" style="float: right;">22</span> <a href="/date/2026-08/" title="2026-08 归档">2026-08</a></h4>
             </li>
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">19</span> <a href="/date/2026-07/" title="2026-07 归档">2026-07</a></h4>
+                <h4><span class="badge" style="float: right;">13</span> <a href="/date/2026-07/" title="2026-07 归档">2026-07</a></h4>
             </li>
                     </ul>
     </div>
