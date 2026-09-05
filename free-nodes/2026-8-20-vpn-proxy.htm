@@ -334,24 +334,9 @@ V2Ray协议中，许多握手和认证机制都依赖于时间戳。一旦设备
     </div>
 <h4>FAQ</h4>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>V2Ray 策略组如何根据延迟自动切换节点？</h5></div>
-    <div class="panel-body">
-        策略组会根据节点延迟和丢包率选择最佳节点。结合路由规则，可保证国内流量直连、海外流量走最优节点，提高访问速度和连接稳定性，优化整体网络体验。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Clash 如何通过命令行管理配置？</h5></div>
-    <div class="panel-body">
-        Clash 内置命令行接口，可用于启动、停止、切换配置或查看日志。通过命令行运行 `clash -f config.yaml` 可加载指定配置文件，适合服务器或无人值守场景。<hr />    </div>
-</div>
-<div class="panel panel-default">
     <div class="panel-heading"><h5>V2Ray 配置文件中 inbound 和 outbound 有什么区别？</h5></div>
     <div class="panel-body">
         在 V2Ray 中，inbound 表示流量进入方式（如本地代理端口），outbound 表示流量出口方式（如 VMess、Trojan 等协议）。通过灵活组合两者，可以实现局域网共享、分流及中继等功能。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Potatso Lite 如何结合手动节点选择优化访问？</h5></div>
-    <div class="panel-body">
-        用户可根据网络延迟和用途手动切换节点，选择最优节点处理不同流量。虽然不支持自动更新，但在节点不稳定或特定需求下可以灵活调整，提高访问效率。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>Hiddify Next 如何设置用户带宽限制？</h5></div>
@@ -359,14 +344,19 @@ V2Ray协议中，许多握手和认证机制都依赖于时间戳。一旦设备
         管理员可为每个用户设置独立带宽和流量配额，超出时可自动降速或阻止访问。这样可确保服务器资源合理分配，避免单用户占用过多带宽，提高整体网络效率和公平性。<hr />    </div>
 </div>
 <div class="panel panel-default">
+    <div class="panel-heading"><h5>VLESS 的 Reality 模式需要额外配置吗？</h5></div>
+    <div class="panel-body">
+        Reality 模式需要配置伪装域名、公钥和服务器指纹等参数。正确配置后，可有效隐藏流量特征，提高在高封锁环境下的可用性和安全性。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>V2Ray 策略组如何根据延迟自动切换节点？</h5></div>
+    <div class="panel-body">
+        策略组会根据节点延迟和丢包率选择最佳节点。结合路由规则，可保证国内流量直连、海外流量走最优节点，提高访问速度和连接稳定性，优化整体网络体验。<hr />    </div>
+</div>
+<div class="panel panel-default">
     <div class="panel-heading"><h5>Mihomo 的日志功能如何调试连接问题？</h5></div>
     <div class="panel-body">
         Mihomo 日志可显示节点连接、请求延迟和错误信息。通过分析日志，可以判断节点是否不可达、TLS 握手失败或规则匹配异常，从而快速定位问题并解决。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Quantumult X 的自动策略组如何工作？</h5></div>
-    <div class="panel-body">
-        Quantumult X 的自动策略组可根据延迟、可用性或测速结果自动选择最优节点，用户无需手动切换。可在策略组设置中开启“延迟优先”或“可用性优先”模式以优化体验。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>Clash 的策略组如何提升分流效率？</h5></div>
@@ -374,14 +364,24 @@ V2Ray协议中，许多握手和认证机制都依赖于时间戳。一旦设备
         策略组可以将多个节点或规则组合在一起，实现按条件自动选择最佳节点。通过策略组，用户无需手动切换节点即可根据延迟、地理位置或流量类型自动分流，提高网络效率。<hr />    </div>
 </div>
 <div class="panel panel-default">
+    <div class="panel-heading"><h5>Clash 如何通过命令行管理配置？</h5></div>
+    <div class="panel-body">
+        Clash 内置命令行接口，可用于启动、停止、切换配置或查看日志。通过命令行运行 `clash -f config.yaml` 可加载指定配置文件，适合服务器或无人值守场景。<hr />    </div>
+</div>
+<div class="panel panel-default">
     <div class="panel-heading"><h5>Clash 的 ACL4SSR 规则与 Rule Provider 有何区别？</h5></div>
     <div class="panel-body">
         ACL4SSR 是第三方规则集合，专注于分流国内外网站。Rule Provider 是 Clash 的订阅机制，允许自动更新远程规则。二者可以结合使用，实现灵活分流管理。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>VLESS 的 Reality 模式需要额外配置吗？</h5></div>
+    <div class="panel-heading"><h5>Potatso Lite 如何结合手动节点选择优化访问？</h5></div>
     <div class="panel-body">
-        Reality 模式需要配置伪装域名、公钥和服务器指纹等参数。正确配置后，可有效隐藏流量特征，提高在高封锁环境下的可用性和安全性。    </div>
+        用户可根据网络延迟和用途手动切换节点，选择最优节点处理不同流量。虽然不支持自动更新，但在节点不稳定或特定需求下可以灵活调整，提高访问效率。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Quantumult X 的自动策略组如何工作？</h5></div>
+    <div class="panel-body">
+        Quantumult X 的自动策略组可根据延迟、可用性或测速结果自动选择最优节点，用户无需手动切换。可在策略组设置中开启“延迟优先”或“可用性优先”模式以优化体验。    </div>
 </div>
 <div class="panel panel-default mt-5">
     <div class="panel-heading">
@@ -429,16 +429,16 @@ V2Ray协议中，许多握手和认证机制都依赖于时间戳。一旦设备
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/share-vpn-2026-8-17.htm" title="推荐免费VPN排名 | 8月17日19.7M/S|免费Trojan节点/Singbox节点/SSR节点/Shadowrocket节点/V2ray节点/Clash节点免费节点订阅分享">推荐免费VPN排名 | 8月17日19.7M/S|免费Trojan节点/Singbox节点/SSR节点/Shadowrocket节点/V2ray节点/Clash节点免费节点订阅分享</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-7-27-free-node-subscribe-links.htm" title="推荐免费VPN排名 | 7月27日22.6M/S|免费Shadowrocket节点/Clash节点/V2ray节点/Singbox节点/SSR节点/Trojan节点免费节点订阅分享">推荐免费VPN排名 | 7月27日22.6M/S|免费Shadowrocket节点/Clash节点/V2ray节点/Singbox节点/SSR节点/Trojan节点免费节点订阅分享</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-7-20-vpn-free.htm" title="推荐免费VPN排名 | 7月20日21.7M/S|免费V2ray节点/Trojan节点/Singbox节点/SSR节点/Clash节点/Shadowrocket节点免费节点订阅分享">推荐免费VPN排名 | 7月20日21.7M/S|免费V2ray节点/Trojan节点/Singbox节点/SSR节点/Clash节点/Shadowrocket节点免费节点订阅分享</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/top-vpn-2026-8-15.htm" title="推荐免费VPN排名 | 8月15日19.1M/S|免费Trojan节点/SSR节点/Shadowrocket节点/Singbox节点/V2ray节点/Clash节点免费节点订阅分享">推荐免费VPN排名 | 8月15日19.1M/S|免费Trojan节点/SSR节点/Shadowrocket节点/Singbox节点/V2ray节点/Clash节点免费节点订阅分享</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-8-28-vpn-proxy.htm" title="推荐免费VPN排名 | 8月28日18.8M/S|免费Singbox节点/Clash节点/SSR节点/Shadowrocket节点/V2ray节点/Trojan节点免费节点订阅分享">推荐免费VPN排名 | 8月28日18.8M/S|免费Singbox节点/Clash节点/SSR节点/Shadowrocket节点/V2ray节点/Trojan节点免费节点订阅分享</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/share-vpn-2026-8-13.htm" title="推荐免费VPN排名 | 8月13日19.8M/S|免费Trojan节点/Clash节点/Shadowrocket节点/SSR节点/V2ray节点/Singbox节点免费节点订阅分享">推荐免费VPN排名 | 8月13日19.8M/S|免费Trojan节点/Clash节点/Shadowrocket节点/SSR节点/V2ray节点/Singbox节点免费节点订阅分享</a><hr /></li>
                         <li class="py-2"><a href="/free-nodes/2026-8-12-node-share.htm" title="推荐免费VPN排名 | 8月12日21.6M/S|免费Clash节点/SSR节点/V2ray节点/Shadowrocket节点/Singbox节点/Trojan节点免费节点订阅分享">推荐免费VPN排名 | 8月12日21.6M/S|免费Clash节点/SSR节点/V2ray节点/Shadowrocket节点/Singbox节点/Trojan节点免费节点订阅分享</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-8-20-vpn-proxy.htm" title="推荐免费VPN排名 | 8月20日20.2M/S|免费SSR节点/Singbox节点/V2ray节点/Shadowrocket节点/Clash节点/Trojan节点免费节点订阅分享">推荐免费VPN排名 | 8月20日20.2M/S|免费SSR节点/Singbox节点/V2ray节点/Shadowrocket节点/Clash节点/Trojan节点免费节点订阅分享</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/node-share-links-2026-8-11.htm" title="推荐免费VPN排名 | 8月11日21M/S|免费V2ray节点/Clash节点/SSR节点/Trojan节点/Shadowrocket节点/Singbox节点免费节点订阅分享">推荐免费VPN排名 | 8月11日21M/S|免费V2ray节点/Clash节点/SSR节点/Trojan节点/Shadowrocket节点/Singbox节点免费节点订阅分享</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-8-26-node-share.htm" title="推荐免费VPN排名 | 8月26日20.7M/S|免费Trojan节点/Shadowrocket节点/SSR节点/Singbox节点/Clash节点/V2ray节点免费节点订阅分享">推荐免费VPN排名 | 8月26日20.7M/S|免费Trojan节点/Shadowrocket节点/SSR节点/Singbox节点/Clash节点/V2ray节点免费节点订阅分享</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/share-vpn-2026-8-25.htm" title="推荐免费VPN排名 | 8月25日21.4M/S|免费Clash节点/Shadowrocket节点/Trojan节点/SSR节点/Singbox节点/V2ray节点免费节点订阅分享">推荐免费VPN排名 | 8月25日21.4M/S|免费Clash节点/Shadowrocket节点/Trojan节点/SSR节点/Singbox节点/V2ray节点免费节点订阅分享</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/share-vpn-2026-9-1.htm" title="推荐免费VPN排名 | 9月1日21.7M/S|免费V2ray节点/SSR节点/Shadowrocket节点/Trojan节点/Clash节点/Singbox节点免费节点订阅分享">推荐免费VPN排名 | 9月1日21.7M/S|免费V2ray节点/SSR节点/Shadowrocket节点/Trojan节点/Clash节点/Singbox节点免费节点订阅分享</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-8-6-top-vpn-node.htm" title="推荐免费VPN排名 | 8月6日19.1M/S|免费SSR节点/Shadowrocket节点/V2ray节点/Trojan节点/Clash节点/Singbox节点免费节点订阅分享">推荐免费VPN排名 | 8月6日19.1M/S|免费SSR节点/Shadowrocket节点/V2ray节点/Trojan节点/Clash节点/Singbox节点免费节点订阅分享</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-8-30-vpn-free.htm" title="推荐免费VPN排名 | 8月30日21.3M/S|免费V2ray节点/Shadowrocket节点/Trojan节点/SSR节点/Singbox节点/Clash节点免费节点订阅分享">推荐免费VPN排名 | 8月30日21.3M/S|免费V2ray节点/Shadowrocket节点/Trojan节点/SSR节点/Singbox节点/Clash节点免费节点订阅分享</a><hr /></li>
                         <li class="py-2"><a href="/free-nodes/free-node-subscribe-links-2026-8-19.htm" title="推荐免费VPN排名 | 8月19日22.2M/S|免费Trojan节点/SSR节点/Shadowrocket节点/V2ray节点/Singbox节点/Clash节点免费节点订阅分享">推荐免费VPN排名 | 8月19日22.2M/S|免费Trojan节点/SSR节点/Shadowrocket节点/V2ray节点/Singbox节点/Clash节点免费节点订阅分享</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/free-node-subscribe-links-2026-8-21.htm" title="推荐免费VPN排名 | 8月21日22.2M/S|免费Clash节点/V2ray节点/Shadowrocket节点/Trojan节点/SSR节点/Singbox节点免费节点订阅分享">推荐免费VPN排名 | 8月21日22.2M/S|免费Clash节点/V2ray节点/Shadowrocket节点/Trojan节点/SSR节点/Singbox节点免费节点订阅分享</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-8-10-free-vpn-node.htm" title="推荐免费VPN排名 | 8月10日20.9M/S|免费Trojan节点/Clash节点/Singbox节点/SSR节点/V2ray节点/Shadowrocket节点免费节点订阅分享">推荐免费VPN排名 | 8月10日20.9M/S|免费Trojan节点/Clash节点/Singbox节点/SSR节点/V2ray节点/Shadowrocket节点免费节点订阅分享</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/share-vpn-2026-7-29.htm" title="推荐免费VPN排名 | 7月29日22M/S|免费Clash节点/SSR节点/Shadowrocket节点/Singbox节点/V2ray节点/Trojan节点免费节点订阅分享">推荐免费VPN排名 | 7月29日22M/S|免费Clash节点/SSR节点/Shadowrocket节点/Singbox节点/V2ray节点/Trojan节点免费节点订阅分享</a><hr /></li>
                     </ul>
     </div>
 </div>
@@ -450,10 +450,10 @@ V2Ray协议中，许多握手和认证机制都依赖于时间戳。一旦设备
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">29</span> <a href="/date/2026-08/" title="2026-08 归档">2026-08</a></h4>
+                <h4><span class="badge" style="float: right;">4</span> <a href="/date/2026-09/" title="2026-09 归档">2026-09</a></h4>
             </li>
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">13</span> <a href="/date/2026-07/" title="2026-07 归档">2026-07</a></h4>
+                <h4><span class="badge" style="float: right;">26</span> <a href="/date/2026-08/" title="2026-08 归档">2026-08</a></h4>
             </li>
                     </ul>
     </div>
