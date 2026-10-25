@@ -1,4 +1,4 @@
-# 推荐免费VPN排名 | 10月18日18.2M/S|免费V2ray节点/SSR节点/Clash节点/Singbox节点/Shadowrocket节点免费节点订阅分享  更新时间 2026-10-18 08:37:12
+# 推荐免费VPN排名 | 10月25日19M/S|免费Shadowrocket节点/SSR节点/Clash节点/V2ray节点/Singbox节点免费节点订阅分享  更新时间 2026-10-25 11:45:52
 所有免费clash节点都爬取自网络，请勿用于非法用途 。节点地址：<a href="https://vpnranking.github.io" target="_blank">点击跳转</a>
 
 ## clash使用教程：
@@ -9,23 +9,23 @@
 
 ### 免费Clash节点订阅链接
 
-- https://vpnranking.github.io/uploads/2026/10/0-20261018.yaml
-- https://vpnranking.github.io/uploads/2026/10/1-20261018.yaml
-- https://vpnranking.github.io/uploads/2026/10/2-20261018.yaml
-- https://vpnranking.github.io/uploads/2026/10/3-20261018.yaml
-- https://vpnranking.github.io/uploads/2026/10/4-20261018.yaml
+- https://vpnranking.github.io/uploads/2026/10/0-20261025.yaml
+- https://vpnranking.github.io/uploads/2026/10/1-20261025.yaml
+- https://vpnranking.github.io/uploads/2026/10/2-20261025.yaml
+- https://vpnranking.github.io/uploads/2026/10/3-20261025.yaml
+- https://vpnranking.github.io/uploads/2026/10/4-20261025.yaml
 
 ### 免费V2ray节点订阅链接
 
-- https://vpnranking.github.io/uploads/2026/10/0-20261018.txt
-- https://vpnranking.github.io/uploads/2026/10/1-20261018.txt
-- https://vpnranking.github.io/uploads/2026/10/2-20261018.txt
-- https://vpnranking.github.io/uploads/2026/10/3-20261018.txt
-- https://vpnranking.github.io/uploads/2026/10/4-20261018.txt
+- https://vpnranking.github.io/uploads/2026/10/0-20261025.txt
+- https://vpnranking.github.io/uploads/2026/10/1-20261025.txt
+- https://vpnranking.github.io/uploads/2026/10/2-20261025.txt
+- https://vpnranking.github.io/uploads/2026/10/3-20261025.txt
+- https://vpnranking.github.io/uploads/2026/10/4-20261025.txt
 
 ### 免费Sing-box节点订阅链接
 
-- https://vpnranking.github.io/uploads/2026/10/20261018.json
+- https://vpnranking.github.io/uploads/2026/10/20261025.json
 
 ## 更多Clash节点订阅 ：
 
